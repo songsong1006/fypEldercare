@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/drawable/circlebackgroundblue.xml" value="0.2155" />
+        <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/drawable/circlebackgroundred.xml" value="0.2155" />
+        <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/drawable/circlebackgroundyellow.xml" value="0.2155" />
+        <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/drawable/circlebackroundgreen.xml" value="0.2155" />
+        <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/drawable/ic_baseline_call_24.xml" value="0.2155" />
+        <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/drawable/ic_baseline_check_circle_24.xml" value="0.2155" />
+        <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.2155" />
+        <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/drawable/ic_baseline_medical_services_24.xml" value="0.2155" />
+        <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
+        <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/layout/activity_main2.xml" value="0.358695652173913" />
+        <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/layout/fragment_call.xml" value="0.358695652173913" />
+        <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/layout/fragment_check.xml" value="0.358695652173913" />
+        <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/layout/fragment_home.xml" value="0.358695652173913" />
+        <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/layout/fragment_location.xml" value="0.358695652173913" />
+        <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/layout/fragment_medicine.xml" value="0.358695652173913" />
+        <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/menu/bottom_navigation.xml" value="0.36666666666666664" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
