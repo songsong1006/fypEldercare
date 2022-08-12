@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "406688623519",
+    "project_id": "fypeldercare",
+    "storage_bucket": "fypeldercare.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406688623519:android:a2701fd5a2e812e251ebaa",
+        "android_client_info": {
+          "package_name": "com.example.bottomnavigation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "406688623519-gi2shqqamqoii2r1u7eidp19a6ntaq1l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0-2q895CIiEt33dxRto0EcVTz6EesvcA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "406688623519-gi2shqqamqoii2r1u7eidp19a6ntaq1l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
