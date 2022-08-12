@@ -4,11 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SelectUser">
+    tools:context=".SelectUser"
+    android:orientation="vertical"
+    android:background="@drawable/selectbg">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select User"/>
+        android:text="ElderCare"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Your"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Type"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/elderly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Elderly"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"/>
+
+    <Button
+        android:id="@+id/family"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Family Members \n / \n Caregivers"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>
