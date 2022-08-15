@@ -119,7 +119,7 @@ public class Login extends AppCompatActivity {
 
                             if(user.isEmailVerified()){
                                 //redirect to user profile
-                                startActivity(new Intent(Login.this, ProfileActivity.class));
+                                startActivity(new Intent(Login.this, MainActivity.class));
                             }else{
                                 user.sendEmailVerification();
                                 Toast.makeText(Login.this, "Check your email spam folder to verify your account ", Toast.LENGTH_LONG).show();
@@ -127,7 +127,7 @@ public class Login extends AppCompatActivity {
                            
                             
                         }else{
-                            Toast.makeText(Login.this, "Failed to Login! Please check your credentials", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Login.this, "Failed to Login! Please check your credentials!", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
