@@ -135,7 +135,7 @@ public class Login extends AppCompatActivity {
 
                             if(user.isEmailVerified()){
                                 //redirect to user profile
-                                startActivity(new Intent(Login.this, MainActivity.class));
+                                startActivity(new Intent(Login.this, MapsActivity.class));
                             }else{
                                 user.sendEmailVerification();
                                 Toast.makeText(Login.this, "Check your email spam folder to verify your account ", Toast.LENGTH_LONG).show();
