@@ -5,18 +5,29 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.Circle;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.bottomnavigation.databinding.ActivityMapsBinding;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,11 +38,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
-    private DatabaseReference databaseReference;
 
-    private LocationListener locationListener;
-    private LocationManager locationManager;
-    private final long MIN_TIME = 1000;
+    private final long MIN_TIME = 1000; // 1 sec
+    private final long MIN_DIST = 5; // 5 meters
+
+    private LatLng latLng;
+
+    Button fab;
+    private FusedLocationProviderClient mLocationClient;
 
 
     @Override
@@ -41,26 +55,52 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         binding = ActivityMapsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
+        fab = findViewById(R.id.fab);
+
+
+        mLocationClient = new FusedLocationProviderClient(this);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getCurrentLoc();
+            }
+        });
+
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION,
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,
                 Manifest.permission.ACCESS_COARSE_LOCATION}, PackageManager.PERMISSION_GRANTED);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Location");
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+    }
 
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
+    @SuppressLint("MissingPermission")
+    private void getCurrentLoc(){
+        mLocationClient.getLastLocation().addOnCompleteListener(task -> {
+            if(task.isSuccessful()){
+                Location location = task.getResult();
+                gotoLocation(location.getLatitude(),location.getLongitude());
             }
         });
+    }
+
+    private void gotoLocation(double latitude, double longitude) {
+        LatLng LatLng = new LatLng(latitude, longitude);
+
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(LatLng,18);
+        mMap.moveCamera(cameraUpdate);
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        Marker marker = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(latitude, longitude))
+                .draggable(true)
+                .title("My Position"));
+
     }
 
     /**
@@ -77,8 +117,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+
     }
 }
