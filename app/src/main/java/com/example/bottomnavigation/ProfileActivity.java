@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -29,6 +30,8 @@ public class ProfileActivity extends AppCompatActivity {
     GoogleSignInClient gsc;
     String userID;
 
+    TextInputLayout username,email,age,gender,childrenName;
+
     Button logout,update;
 
     @Override
@@ -37,6 +40,17 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
 
+        //Hooks
+        username = findViewById(R.id.username_profile);
+        email = findViewById(R.id.email_profile);
+        age = findViewById(R.id.age_profile);
+        gender = findViewById(R.id.gender_profile);
+        childrenName = findViewById(R.id.childrenName_profile);
+
+        //ShowAllData
+        showAllUserData();
+        
+        
 
         logout = findViewById(R.id.logoutbtn);
 
@@ -57,42 +71,25 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Users");
-        userID = user.getUid();
 
-        final TextView emailTextView = findViewById(R.id.emailAddress);
-        final TextView usernameTextView = findViewById(R.id.userName);
-        final TextView ageTextView = findViewById(R.id.age);
-        final TextView genderTextView = findViewById(R.id.gender);
-        final TextView childrenTextView = findViewById(R.id.childrenName);
+    }
 
-        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                UserModel userProfile = snapshot.getValue(UserModel.class);
+    private void showAllUserData() {
 
-                if(userProfile != null){
-                    String emailAddress = userProfile.email;
-                    String userName = userProfile.username;
-                    String age = userProfile.age;
-                    String gender = userProfile.gender;
-                    String childrenName = userProfile.children;
+        Intent intent = getIntent();
+        String user_username = intent.getStringExtra("username");
+        String user_email = intent.getStringExtra("email");
+        String user_age = intent.getStringExtra("age");
+        String user_gender = intent.getStringExtra("gender");
+        String user_childrenName = intent.getStringExtra("children");
 
-                    emailTextView.setText(emailAddress);
-                    usernameTextView.setText(userName);
-                    ageTextView.setText(age);
-                    genderTextView.setText(gender);
-                    childrenTextView.setText(childrenName);
-                }
-            }
+        username.getEditText().setText(user_username);
+        email.getEditText().setText(user_email);
+        age.getEditText().setText(user_age);
+        gender.getEditText().setText(user_gender);
+        childrenName.getEditText().setText(user_childrenName);
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(ProfileActivity.this, "Something wrong happened!", Toast.LENGTH_LONG).show();
 
-            }
-        });
     }
 
 }
