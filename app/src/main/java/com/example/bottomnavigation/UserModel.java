@@ -2,18 +2,36 @@ package com.example.bottomnavigation;
 
 public class UserModel {
 
-    public String email, username, age, gender, children;
+    String name, username, email, password, age, gender, childrenName;
 
-    public UserModel(){
+    public UserModel() {
 
     }
 
-    public UserModel(String email, String username, String age, String gender, String children){
-        this.email = email;
+    public UserModel(String name, String username, String email, String password, String age, String gender, String childrenName) {
+        this.name = name;
         this.username = username;
+        this.email = email;
+        this.password = password;
         this.age = age;
         this.gender = gender;
-        this.children = children;
+        this.childrenName = childrenName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail() {
@@ -24,12 +42,12 @@ public class UserModel {
         this.email = email;
     }
 
-    public String getUsername() {
-        return username;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getAge() {
@@ -48,11 +66,11 @@ public class UserModel {
         this.gender = gender;
     }
 
-    public String getChildren() {
-        return children;
+    public String getChildrenName() {
+        return childrenName;
     }
 
-    public void setChildren(String children) {
-        this.children = children;
+    public void setChildrenName(String childrenName) {
+        this.childrenName = childrenName;
     }
 }

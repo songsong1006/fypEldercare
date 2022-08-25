@@ -9,28 +9,78 @@
     android:padding="10dp"
     android:background="@drawable/home">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:layout_marginTop="90dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:padding="20dp">
+
         <TextView
+            android:id="@+id/profile_logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Profile"
             android:textStyle="italic|bold"
-            android:textSize="35dp"
-            android:textColor="@color/black"/>
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_baseline_person_24"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yeow"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_toRightOf="@+id/profile_image"
+            android:includeFontPadding="false"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="songsong"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_toRightOf="@+id/profile_image"
+            android:layout_centerVertical="true"
+            android:layout_below="@+id/full_name"
+            android:includeFontPadding="false"/>
 
 
-    </LinearLayout>
+    </RelativeLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fullname_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Full Name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_marginBottom="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fullName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ABc"
+                android:drawableLeft="@drawable/ic_baseline_email_24"
+                android:drawablePadding="10dp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/username_profile"
@@ -122,13 +172,6 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="LOGOUT"
-            android:id="@+id/logoutbtn"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
 
         <Button
             android:id="@+id/update"
