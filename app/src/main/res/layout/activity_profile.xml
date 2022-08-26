@@ -33,26 +33,27 @@
             android:layout_centerVertical="true"/>
 
         <TextView
-            android:id="@+id/full_name"
+            android:id="@+id/full_nameLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Yeow"
-            android:textSize="20dp"
-            android:fontFamily="sans-serif-condensed"
+            android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/profile_image"
+            android:fontFamily="sans-serif-condensed"
             android:includeFontPadding="false"
-            android:layout_centerVertical="true"/>
+            android:text="Yeow"
+            android:textSize="20dp" />
 
         <TextView
+            android:id="@+id/username_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="songsong"
-            android:textSize="20dp"
-            android:fontFamily="sans-serif-condensed"
-            android:layout_toRightOf="@+id/profile_image"
+            android:layout_below="@+id/full_nameLabel"
             android:layout_centerVertical="true"
-            android:layout_below="@+id/full_name"
-            android:includeFontPadding="false"/>
+            android:layout_toRightOf="@+id/profile_image"
+            android:fontFamily="sans-serif-condensed"
+            android:includeFontPadding="false"
+            android:text="song"
+            android:textSize="20dp" />
 
 
     </RelativeLayout>
@@ -76,8 +77,7 @@
                 android:id="@+id/fullName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ABc"
-                android:drawableLeft="@drawable/ic_baseline_email_24"
+                android:drawableLeft="@drawable/ic_baseline_person_24"
                 android:drawablePadding="10dp"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -94,8 +94,7 @@
                 android:id="@+id/userName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ABc"
-                android:drawableLeft="@drawable/ic_baseline_email_24"
+                android:drawableLeft="@drawable/ic_baseline_person_24"
                 android:drawablePadding="10dp"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -112,7 +111,6 @@
                 android:id="@+id/emailAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ABc"
                 android:drawableLeft="@drawable/ic_baseline_email_24"
                 android:drawablePadding="10dp"/>
             
@@ -130,8 +128,7 @@
                 android:id="@+id/age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="123"
-                android:drawableLeft="@drawable/ic_baseline_email_24"
+                android:drawableLeft="@drawable/ic_baseline_info_24"
                 android:drawablePadding="10dp"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -148,8 +145,7 @@
                 android:id="@+id/gender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="123"
-                android:drawableLeft="@drawable/ic_baseline_email_24"
+                android:drawableLeft="@drawable/ic_baseline_info_24"
                 android:drawablePadding="10dp"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -166,14 +162,14 @@
                 android:id="@+id/childrenName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="123"
-                android:drawableLeft="@drawable/ic_baseline_email_24"
+                android:drawableLeft="@drawable/ic_baseline_info_24"
                 android:drawablePadding="10dp"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <Button
+            android:onClick="update"
             android:id="@+id/update"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

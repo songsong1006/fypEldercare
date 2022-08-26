@@ -23,10 +23,10 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/email_login"
+        android:id="@+id/username_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email Address"
+        android:hint="Username"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_marginBottom="10dp"
         android:transitionName="email_tran">
@@ -66,6 +66,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/loginbtn"
+        android:onClick="loginUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -124,7 +125,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_gravity="center">
 
         <ImageView
@@ -133,6 +134,13 @@
             android:layout_margin="20dp"
             android:src="@drawable/google"
             android:id="@+id/google_btn"/>
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/fingerprint"/>
+
 
     </LinearLayout>
 

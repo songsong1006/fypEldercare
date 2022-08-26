@@ -30,12 +30,18 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthCredential;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class Login extends AppCompatActivity {
 
     Button register,login;
     TextView logoText;
-    TextInputLayout email,password;
+    TextInputLayout username,password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +52,7 @@ public class Login extends AppCompatActivity {
         register = findViewById(R.id.registerbtn);
         login = findViewById(R.id.loginbtn);
         logoText = findViewById(R.id.login_name);
-        email = findViewById(R.id.email_login);
+        username = findViewById(R.id.username_login);
         password = findViewById(R.id.password_login);
 
 
@@ -58,7 +64,7 @@ public class Login extends AppCompatActivity {
                 Pair[] pairs = new Pair[5];
 
                 pairs[0] = new Pair<View,String>(logoText,"logo_text");
-                pairs[1] = new Pair<View,String>(email,"email_tran");
+                pairs[1] = new Pair<View,String>(username,"email_tran");
                 pairs[2] = new Pair<View,String>(password,"password_tran");
                 pairs[3] = new Pair<View,String>(register,"buttonRegister_tran");
                 pairs[4] = new Pair<View,String>(login,"buttonLogin_tran");
@@ -69,6 +75,114 @@ public class Login extends AppCompatActivity {
             }
         });
 
+    }
+
+    private Boolean validateUsername(){
+        String val = username.getEditText().getText().toString();
+
+        if (val.isEmpty()){
+            username.setError("Field cannot be empty");
+            return false;
+        }
+        else{
+            username.setError(null);
+            username.setErrorEnabled(false);
+            return true;
+        }
+
+    }
+
+    private Boolean validatePassword(){
+        String val = password.getEditText().getText().toString();
+
+        if (val.isEmpty()){
+            password.setError("Field cannot be empty");
+            return false;
+        }
+        else{
+            password.setError(null);
+            password.setErrorEnabled(false);
+            return true;
+        }
+
+    }
+
+    public void loginUser(View view){
+        if(!validateUsername() | !validatePassword()){
+            return;
+        }
+        else {
+            isUser();
+        }
+    }
+
+    private void isUser() {
+
+        String userEnteredUsername = username.getEditText().getText().toString().trim();
+        String userEnteredPassword = password.getEditText().getText().toString().trim();
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+
+        Query checkUser = reference.orderByChild("username").equalTo(userEnteredUsername);
+
+        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if(snapshot.exists()){
+
+                    username.setError(null);
+                    username.setErrorEnabled(false);
+
+                    String passwordFromDB = snapshot.child(userEnteredUsername).child("password")
+                            .getValue(String.class);
+
+                    if (passwordFromDB.equals(userEnteredPassword)){
+
+                        String nameFromDB = snapshot.child(userEnteredUsername).child("name")
+                                .getValue(String.class);
+                        String usernameFromDB = snapshot.child(userEnteredUsername).child("username")
+                                .getValue(String.class);
+                        String genderFromDB = snapshot.child(userEnteredUsername).child("gender")
+                                .getValue(String.class);
+                        String ageFromDB = snapshot.child(userEnteredUsername).child("age")
+                                .getValue(String.class);
+                        String childrenNameFromDB = snapshot.child(userEnteredUsername).child("childrenName")
+                                .getValue(String.class);
+                        String emailFromDB = snapshot.child(userEnteredUsername).child("email")
+                                .getValue(String.class);
+
+                        Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+
+                        intent.putExtra("name",nameFromDB);
+                        intent.putExtra("username",usernameFromDB);
+                        intent.putExtra("gender",genderFromDB);
+                        intent.putExtra("age",ageFromDB);
+                        intent.putExtra("childrenName",childrenNameFromDB);
+                        intent.putExtra("email",emailFromDB);
+                        intent.putExtra("password",passwordFromDB);
+
+                        startActivity(intent);
+
+
+                    }
+                    else {
+                        password.setError("Wrong Password");
+                        password.requestFocus();
+                    }
+
+                }else{
+                    username.setError("No such User exist");
+                    username.requestFocus();
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
     }
 
