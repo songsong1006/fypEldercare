@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    android:elevation="6dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_launcher_background"
+            android:layout_centerVertical="true"
+            android:id="@+id/imgl"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF000000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/medName_text"
+            android:text="Medicine Name"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_toRightOf="@id/imgl"
+            android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tablets_text"
+            android:text="Tablets"
+            android:textSize="25sp"
+            android:textColor="#000"
+            android:layout_toRightOf="@id/imgl"
+            android:layout_below="@id/medName_text"
+            android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/timesDaily_text"
+            android:text="Times Daily"
+            android:textSize="25sp"
+            android:textColor="#000"
+            android:layout_toRightOf="@id/imgl"
+            android:layout_below="@id/tablets_text"
+            android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/food_text"
+            android:text="Before"
+            android:textSize="25sp"
+            android:textColor="#000"
+            android:layout_toRightOf="@id/imgl"
+            android:layout_below="@id/timesDaily_text"
+            android:layout_marginLeft="5dp"/>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

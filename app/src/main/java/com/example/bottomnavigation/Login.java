@@ -152,7 +152,7 @@ public class Login extends AppCompatActivity {
                         String emailFromDB = snapshot.child(userEnteredUsername).child("email")
                                 .getValue(String.class);
 
-                        Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
 
                         intent.putExtra("name",nameFromDB);
                         intent.putExtra("username",usernameFromDB);
