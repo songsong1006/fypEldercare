@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.bottomnavigation.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -34,6 +35,13 @@ public class MedicineAdapter extends FirebaseRecyclerAdapter<MedicineModel,Medic
         holder.tablets.setText(model.getTablets());
         holder.food.setText(model.getFood());
         holder.timesDaily.setText(model.getTimesDaily());
+
+        Glide.with(holder.img.getContext())
+                .load(model.getPicUrl())
+                .placeholder(com.google.android.gms.base.R.drawable.common_google_signin_btn_icon_dark)
+                .circleCrop()
+                .error(com.firebase.ui.database.R.drawable.common_google_signin_btn_icon_dark_normal)
+                .into(holder.img);
 
     }
 

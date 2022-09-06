@@ -2,7 +2,11 @@ package com.example.bottomnavigation.Medicine;
 
 public class MedicineModel {
 
-    String food, medName, tablets, timesDaily, picUrl;
+    String food;
+    String medName;
+    String tablets;
+    String timesDaily;
+    String picUrl;
 
     MedicineModel(){
 

@@ -11,20 +11,56 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.bottomnavigation.Medicine.MedicineAdapter;
+import com.example.bottomnavigation.Medicine.MedicineModel;
 import com.example.bottomnavigation.R;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.FirebaseOptions;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.lang.reflect.Modifier;
 
 public class MedicineFragment extends Fragment {
 
     RecyclerView recyclerView;
+
+    MedicineAdapter medicineAdapter;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_medicine,container,false);
 
-        recyclerView= root.findViewById(R.id.recycleView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        recyclerView = (RecyclerView) root.findViewById(R.id.recycleView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        FirebaseRecyclerOptions<MedicineModel> options =
+                new FirebaseRecyclerOptions.Builder<MedicineModel>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Medicine"), MedicineModel.class)
+                        .build();
+
+
+
+        medicineAdapter = new MedicineAdapter(options);
+
+        recyclerView.setAdapter(medicineAdapter);
+
+
 
         return root;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        medicineAdapter.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        medicineAdapter.stopListening();
     }
 }
