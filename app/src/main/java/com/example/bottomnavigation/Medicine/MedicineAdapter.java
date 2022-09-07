@@ -38,7 +38,7 @@ public class MedicineAdapter extends FirebaseRecyclerAdapter<MedicineModel,Medic
 
         Glide.with(holder.img.getContext())
                 .load(model.getPicUrl())
-                .placeholder(com.google.android.gms.base.R.drawable.common_google_signin_btn_icon_dark)
+                .placeholder(com.firebase.ui.database.R.drawable.common_google_signin_btn_icon_dark)
                 .circleCrop()
                 .error(com.firebase.ui.database.R.drawable.common_google_signin_btn_icon_dark_normal)
                 .into(holder.img);

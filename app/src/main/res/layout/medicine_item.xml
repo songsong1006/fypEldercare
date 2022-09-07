@@ -13,13 +13,12 @@
         android:padding="15dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgl"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@drawable/ic_launcher_background"
-            android:layout_centerVertical="true"
-            android:id="@+id/imgl"
-            app:civ_border_width="2dp"
-            app:civ_border_color="#FF000000"/>
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -32,8 +31,29 @@
             android:layout_toRightOf="@id/imgl"
             android:layout_marginLeft="5dp"/>
 
-        <TextView
+
+        <LinearLayout
+            android:id="@+id/tablets_linear"
             android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/medName_text"
+            android:layout_toRightOf="@id/imgl"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tablets"
+                android:text="Tablets:"
+                android:textSize="25sp"
+                android:textColor="#000"
+                android:layout_toRightOf="@id/imgl"
+                android:layout_below="@id/medName_text"
+                android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:textStyle="italic"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:id="@+id/tablets_text"
             android:text="Tablets"
@@ -43,27 +63,94 @@
             android:layout_below="@id/medName_text"
             android:layout_marginLeft="5dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/timesDaily_text"
-            android:text="Times Daily"
-            android:textSize="25sp"
-            android:textColor="#000"
-            android:layout_toRightOf="@id/imgl"
-            android:layout_below="@id/tablets_text"
-            android:layout_marginLeft="5dp"/>
+    </LinearLayout>
 
-        <TextView
+
+        <LinearLayout
+            android:id="@+id/timesDaily_linear"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/tablets_linear"
+            android:layout_toRightOf="@id/imgl"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/timesDaily"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tablets_text"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/imgl"
+                android:text="Times Daily:"
+                android:textColor="#000"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/timesDaily_text"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tablets_text"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/imgl"
+                android:text="Times Daily"
+                android:textColor="#000"
+                android:textSize="25sp"
+                android:textStyle="italic" />
+
+    </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/food_linear"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/timesDaily_linear"
+            android:layout_toRightOf="@id/imgl"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/food"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Food:"
+                android:textColor="#000"
+                android:textSize="25sp"/>
+
+            <TextView
+                android:textStyle="italic"
+                android:id="@+id/food_text"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Before"
+                android:textColor="#000"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_below="@+id/food_linear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/food_text"
-            android:text="Before"
-            android:textSize="25sp"
-            android:textColor="#000"
-            android:layout_toRightOf="@id/imgl"
-            android:layout_below="@id/timesDaily_text"
-            android:layout_marginLeft="5dp"/>
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Edit"
+                android:textAllCaps="false"
+                android:layout_marginRight="5dp"
+                android:id="@+id/btnEdit"/>
+
+            <Button
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Delete"
+                android:textAllCaps="false"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/btnDelete"/>
+
+        </LinearLayout>
 
 
     </RelativeLayout>

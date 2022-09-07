@@ -2,8 +2,12 @@ package com.example.bottomnavigation.Fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -47,6 +51,8 @@ public class MedicineFragment extends Fragment {
 
         recyclerView.setAdapter(medicineAdapter);
 
+        setHasOptionsMenu(true);
+
 
 
         return root;
@@ -62,5 +68,44 @@ public class MedicineFragment extends Fragment {
     public void onStop() {
         super.onStop();
         medicineAdapter.stopListening();
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+
+        inflater.inflate(R.menu.search, menu);
+        MenuItem item = menu.findItem(R.id.search);
+        SearchView searchView = (SearchView) item.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                txtSearch(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                txtSearch(query);
+                return false;
+            }
+        });
+
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    private void txtSearch(String str){
+
+        FirebaseRecyclerOptions<MedicineModel> options =
+                new FirebaseRecyclerOptions.Builder<MedicineModel>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Medicine")
+                                .orderByChild("medName").startAt(str)
+                                .endAt(str+"~"), MedicineModel.class)
+                        .build();
+
+        medicineAdapter = new MedicineAdapter(options);
+        medicineAdapter.startListening();
+        recyclerView.setAdapter(medicineAdapter);
+
     }
 }
