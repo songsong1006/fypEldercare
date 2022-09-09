@@ -1,5 +1,6 @@
 package com.example.bottomnavigation.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -15,21 +16,21 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.bottomnavigation.Medicine.AddMedicineActivity;
 import com.example.bottomnavigation.Medicine.MedicineAdapter;
 import com.example.bottomnavigation.Medicine.MedicineModel;
 import com.example.bottomnavigation.R;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.firebase.FirebaseOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.lang.reflect.Modifier;
 
 public class MedicineFragment extends Fragment {
 
     RecyclerView recyclerView;
 
     MedicineAdapter medicineAdapter;
+
+    FloatingActionButton floatingActionButton;
 
     @Nullable
     @Override
@@ -50,6 +51,15 @@ public class MedicineFragment extends Fragment {
         medicineAdapter = new MedicineAdapter(options);
 
         recyclerView.setAdapter(medicineAdapter);
+
+        floatingActionButton = root.findViewById(R.id.floatingActionButton);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), AddMedicineActivity.class));
+            }
+        });
 
         setHasOptionsMenu(true);
 

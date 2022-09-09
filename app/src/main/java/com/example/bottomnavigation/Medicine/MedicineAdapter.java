@@ -61,7 +61,7 @@ public class MedicineAdapter extends FirebaseRecyclerAdapter<MedicineModel,Medic
             public void onClick(View v) {
                 final DialogPlus dialogPlus = DialogPlus.newDialog(holder.img.getContext())
                         .setContentHolder(new ViewHolder(R.layout.update_popup))
-                        .setExpanded(true, 1500)
+                        .setExpanded(true, 1350)
                         .create();
 
                 //dialogPlus.show();
