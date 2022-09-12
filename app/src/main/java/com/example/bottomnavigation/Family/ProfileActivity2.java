@@ -1,6 +1,5 @@
-package com.example.bottomnavigation;
+package com.example.bottomnavigation.Family;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,19 +9,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.example.bottomnavigation.MainActivity2;
+import com.example.bottomnavigation.R;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-public class ProfileActivity extends AppCompatActivity {
+public class ProfileActivity2 extends AppCompatActivity {
 
     TextInputLayout fullName, email, name, age, gender, childrenName;
     TextView fullNameLabel, usernameLabel;
@@ -34,37 +27,34 @@ public class ProfileActivity extends AppCompatActivity {
 
     DatabaseReference reference;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
-
-        reference = FirebaseDatabase.getInstance().getReference("Users");
+        setContentView(R.layout.activity_profile2);
+        reference = FirebaseDatabase.getInstance().getReference("Users2");
 
         //Hooks
-        fullName = findViewById(R.id.fullname_profile);
-        email = findViewById(R.id.email_profile);
-        name = findViewById(R.id.username_profile);
-        age = findViewById(R.id.age_profile);
-        gender = findViewById(R.id.gender_profile);
-        childrenName = findViewById(R.id.childrenName_profile);
+        fullName = findViewById(R.id.fullname_profile2);
+        email = findViewById(R.id.email_profile2);
+        name = findViewById(R.id.username_profile2);
+        age = findViewById(R.id.age_profile2);
+        gender = findViewById(R.id.gender_profile2);
+        childrenName = findViewById(R.id.childrenName_profile2);
 
-        fullNameLabel = findViewById(R.id.full_nameLabel);
-        usernameLabel = findViewById(R.id.username_label);
+        fullNameLabel = findViewById(R.id.full_nameLabel2);
+        usernameLabel = findViewById(R.id.username_label2);
 
-        back = findViewById(R.id.back_home);
+        back = findViewById(R.id.back_home2);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ProfileActivity.this, MainActivity.class));
+                startActivity(new Intent(ProfileActivity2.this, MainActivity2.class));
             }
         });
 
         //ShowAllData
         showAllUserData();
-
 
 
 
@@ -93,11 +83,11 @@ public class ProfileActivity extends AppCompatActivity {
 
     }
 
-    public void update(View view){
+    public void update2(View view){
 
         if(isNameChanged() | isAgeChanged()){
             Toast.makeText(this, "Data has been updated", Toast.LENGTH_LONG).show();
-            
+
         }
         else{
             Toast.makeText(this, "Nothing updated", Toast.LENGTH_LONG).show();
@@ -137,6 +127,4 @@ public class ProfileActivity extends AppCompatActivity {
         }
 
     }
-
-
 }

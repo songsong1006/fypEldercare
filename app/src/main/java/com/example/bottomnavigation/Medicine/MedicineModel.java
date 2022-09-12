@@ -20,6 +20,7 @@ public class MedicineModel {
         this.picUrl = picUrl;
     }
 
+
     public String getFood() {
         return food;
     }

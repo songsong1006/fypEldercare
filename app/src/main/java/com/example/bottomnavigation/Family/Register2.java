@@ -1,26 +1,20 @@
-package com.example.bottomnavigation;
+package com.example.bottomnavigation.Family;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.example.bottomnavigation.Login;
+import com.example.bottomnavigation.R;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Register extends AppCompatActivity {
+public class Register2 extends AppCompatActivity {
 
     TextInputLayout regName, regUsername, regEmail, regPassword, regAge, regGender, regChildrenName;
     Button regBtn, regToLoginBtn;
@@ -32,25 +26,24 @@ public class Register extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
-
+        setContentView(R.layout.activity_register2);
         //Hooks
-        regName = findViewById(R.id.fullName_reg);
-        regUsername = findViewById(R.id.username_reg);
-        regEmail = findViewById(R.id.email_reg);
-        regPassword = findViewById(R.id.password_reg);
-        regAge = findViewById(R.id.age_reg);
-        regGender = findViewById(R.id.gender_reg);
-        regChildrenName = findViewById(R.id.childrenName_reg);
+        regName = findViewById(R.id.fullName_reg2);
+        regUsername = findViewById(R.id.username_reg2);
+        regEmail = findViewById(R.id.email_reg2);
+        regPassword = findViewById(R.id.password_reg2);
+        regAge = findViewById(R.id.age_reg2);
+        regGender = findViewById(R.id.gender_reg2);
+        regChildrenName = findViewById(R.id.childrenName_reg2);
 
-        regBtn = findViewById(R.id.registerbtn);
-        regToLoginBtn = findViewById(R.id.backloginbtn);
+        regBtn = findViewById(R.id.registerbtn2);
+        regToLoginBtn = findViewById(R.id.backloginbtn2);
 
         //Back To Login
         regToLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Register.this,Login.class));
+                startActivity(new Intent(Register2.this, Login.class));
             }
         });
 
@@ -61,12 +54,12 @@ public class Register extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (!validateName() | !validateUsername() | !validateEmail() | !validateAge() |
-                !validatePassword() | !validateGender() | !validateChildrenName()){
+                        !validatePassword() | !validateGender() | !validateChildrenName()){
                     return;
                 }
 
                 rootNode = FirebaseDatabase.getInstance();
-                reference = rootNode.getReference("Users");
+                reference = rootNode.getReference("Users2");
 
                 //Get all the values
                 String name = regName.getEditText().getText().toString();
@@ -77,12 +70,12 @@ public class Register extends AppCompatActivity {
                 String gender = regGender.getEditText().getText().toString();
                 String childrenName = regChildrenName.getEditText().getText().toString();
 
-                UserModel userModel = new UserModel(name, username, email, password, age, gender, childrenName);
+                UserModel2 userModel2 = new UserModel2(name, username, email, password, age, gender, childrenName);
 
-                reference.child(username).setValue(userModel);
+                reference.child(username).setValue(userModel2);
 
-                startActivity(new Intent(Register.this,Login.class));
-                Toast.makeText(Register.this, "Successfully Registered!", Toast.LENGTH_LONG)
+                startActivity(new Intent(Register2.this,Login.class));
+                Toast.makeText(Register2.this, "Successfully Registered!", Toast.LENGTH_LONG)
                         .show();
 
             }

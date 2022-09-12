@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity"
+    tools:context=".Family.ProfileActivity2"
     android:orientation="vertical"
     android:padding="10dp"
     android:background="@drawable/home">
@@ -16,7 +16,7 @@
         android:padding="20dp">
 
         <TextView
-            android:id="@+id/profile_logo"
+            android:id="@+id/profile_logo2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Profile"
@@ -26,30 +26,30 @@
             android:layout_centerHorizontal="true"/>
 
         <ImageView
-            android:id="@+id/profile_image"
+            android:id="@+id/profile_image2"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/ic_baseline_person_24"
             android:layout_centerVertical="true"/>
 
         <TextView
-            android:id="@+id/full_nameLabel"
+            android:id="@+id/full_nameLabel2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/profile_image"
+            android:layout_toRightOf="@+id/profile_image2"
             android:fontFamily="sans-serif-condensed"
             android:includeFontPadding="false"
             android:text="Yeow"
             android:textSize="20dp" />
 
         <TextView
-            android:id="@+id/username_label"
+            android:id="@+id/username_label2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/full_nameLabel"
+            android:layout_below="@+id/full_nameLabel2"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/profile_image"
+            android:layout_toRightOf="@+id/profile_image2"
             android:fontFamily="sans-serif-condensed"
             android:includeFontPadding="false"
             android:text="song"
@@ -66,7 +66,7 @@
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/fullname_profile"
+            android:id="@+id/fullname_profile2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Full Name"
@@ -74,7 +74,7 @@
             android:layout_marginBottom="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/fullName"
+                android:id="@+id/fullName2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_baseline_person_24"
@@ -83,7 +83,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/username_profile"
+            android:id="@+id/username_profile2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Username"
@@ -91,7 +91,7 @@
             android:layout_marginBottom="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/userName"
+                android:id="@+id/userName2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_baseline_person_24"
@@ -100,24 +100,24 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/email_profile"
+            android:id="@+id/email_profile2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email Address"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_marginBottom="10dp">
-            
+
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailAddress"
+                android:id="@+id/emailAddress2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_baseline_email_24"
                 android:drawablePadding="10dp"/>
-            
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/age_profile"
+            android:id="@+id/age_profile2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Age"
@@ -125,7 +125,7 @@
             android:layout_marginBottom="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/age"
+                android:id="@+id/age2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_baseline_info_24"
@@ -134,7 +134,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/gender_profile"
+            android:id="@+id/gender_profile2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Gender"
@@ -142,7 +142,7 @@
             android:layout_marginBottom="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/gender"
+                android:id="@+id/gender2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_baseline_info_24"
@@ -151,15 +151,15 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/childrenName_profile"
+            android:id="@+id/childrenName_profile2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Children Name"
+            android:hint="Parent Name"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_marginBottom="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/childrenName"
+                android:id="@+id/childrenName2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_baseline_info_24"
@@ -169,7 +169,7 @@
 
 
         <Button
-            android:onClick="update"
+            android:onClick="update2"
             android:id="@+id/update"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -177,7 +177,7 @@
             android:layout_gravity="center"/>
 
         <Button
-            android:id="@+id/back_home"
+            android:id="@+id/back_home2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="BACK TO HOME"

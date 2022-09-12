@@ -18,6 +18,12 @@
         android:theme="@style/Theme.BottomNavigation"
         tools:targetApi="31">
         <activity
+            android:name=".Family.ProfileActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".Family.Register2"
+            android:exported="false" />
+        <activity
             android:name=".Medicine.AddMedicineActivity"
             android:exported="false" />
         <!--
@@ -61,7 +67,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Login2"
+            android:name=".Family.Login2"
             android:exported="false" />
         <activity
             android:name=".MainActivity2"

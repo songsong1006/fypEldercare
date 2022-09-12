@@ -1,4 +1,4 @@
-package com.example.bottomnavigation;
+package com.example.bottomnavigation.Family;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,29 +7,13 @@ import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Pair;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.auth.api.identity.SignInCredential;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.example.bottomnavigation.ForgotPassword;
+import com.example.bottomnavigation.R;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GoogleAuthCredential;
-import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -37,30 +21,29 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-public class Login extends AppCompatActivity {
+public class Login2 extends AppCompatActivity {
 
     Button register,login;
     TextView logoText,forgotPass;
     TextInputLayout username,password;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login2); //Hooks
+        register = findViewById(R.id.registerbtn2);
+        login = findViewById(R.id.loginbtn2);
+        logoText = findViewById(R.id.login_name2);
+        username = findViewById(R.id.username_login2);
+        password = findViewById(R.id.password_login2);
 
-        //Hooks
-        register = findViewById(R.id.registerbtn);
-        login = findViewById(R.id.loginbtn);
-        logoText = findViewById(R.id.login_name);
-        username = findViewById(R.id.username_login);
-        password = findViewById(R.id.password_login);
-
-        forgotPass = findViewById(R.id.forgotpass);
+        forgotPass = findViewById(R.id.forgotpass2);
 
         forgotPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Login.this,ForgotPassword.class));
+                startActivity(new Intent(Login2.this, ForgotPassword.class));
             }
         });
 
@@ -68,7 +51,7 @@ public class Login extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Login.this,Register.class);
+                Intent intent = new Intent(Login2.this, Register2.class);
 
                 Pair[] pairs = new Pair[5];
 
@@ -78,7 +61,7 @@ public class Login extends AppCompatActivity {
                 pairs[3] = new Pair<View,String>(register,"buttonRegister_tran");
                 pairs[4] = new Pair<View,String>(login,"buttonLogin_tran");
 
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(Login.this,pairs);
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(Login2.this,pairs);
                 startActivity(intent,options.toBundle());
 
             }
@@ -130,7 +113,7 @@ public class Login extends AppCompatActivity {
         String userEnteredUsername = username.getEditText().getText().toString().trim();
         String userEnteredPassword = password.getEditText().getText().toString().trim();
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users2");
 
         Query checkUser = reference.orderByChild("username").equalTo(userEnteredUsername);
 
@@ -161,7 +144,7 @@ public class Login extends AppCompatActivity {
                         String emailFromDB = snapshot.child(userEnteredUsername).child("email")
                                 .getValue(String.class);
 
-                        Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), ProfileActivity2.class);
 
                         intent.putExtra("name",nameFromDB);
                         intent.putExtra("username",usernameFromDB);

@@ -5,20 +5,30 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import com.example.bottomnavigation.Family.Login2;
+import com.example.bottomnavigation.Login;
 import com.example.bottomnavigation.MainActivity;
+import com.example.bottomnavigation.MainActivity2;
 import com.example.bottomnavigation.ProfileActivity;
 import com.example.bottomnavigation.R;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
     CardView checkCard, locationCard, medicineCard, emergencyCard;
     ImageView profile;
+    GoogleSignInClient gsc;
+    Button signOutBtn;
 
     @Nullable
     @Override
@@ -37,6 +47,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         medicineCard.setOnClickListener(this);
         emergencyCard.setOnClickListener(this);
 
+        signOutBtn = root.findViewById(R.id.signout);
+
         profile = root.findViewById(R.id.userProfile);
 
         profile.setOnClickListener(new View.OnClickListener() {
@@ -49,6 +61,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         return root;
     }
+
 
 
     @Override
