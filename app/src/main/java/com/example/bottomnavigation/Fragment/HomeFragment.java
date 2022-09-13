@@ -19,6 +19,7 @@ import com.example.bottomnavigation.MainActivity;
 import com.example.bottomnavigation.MainActivity2;
 import com.example.bottomnavigation.ProfileActivity;
 import com.example.bottomnavigation.R;
+import com.example.bottomnavigation.SettingsActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -26,9 +27,8 @@ import com.google.android.gms.tasks.Task;
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
     CardView checkCard, locationCard, medicineCard, emergencyCard;
-    ImageView profile;
-    GoogleSignInClient gsc;
-    Button signOutBtn;
+    ImageView profile,settings;
+
 
     @Nullable
     @Override
@@ -47,14 +47,21 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         medicineCard.setOnClickListener(this);
         emergencyCard.setOnClickListener(this);
 
-        signOutBtn = root.findViewById(R.id.signout);
 
         profile = root.findViewById(R.id.userProfile);
+        settings = root.findViewById(R.id.settings);
 
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), ProfileActivity.class));
+            }
+        });
+
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), SettingsActivity.class));
             }
         });
 

@@ -18,6 +18,12 @@
         android:theme="@style/Theme.BottomNavigation"
         tools:targetApi="31">
         <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Family.MainActivity3"
+            android:exported="false" />
+        <activity
             android:name=".Family.ProfileActivity2"
             android:exported="false" />
         <activity
