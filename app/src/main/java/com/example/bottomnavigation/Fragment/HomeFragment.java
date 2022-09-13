@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.bottomnavigation.Family.Login2;
 import com.example.bottomnavigation.Login;
@@ -24,7 +25,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-public class HomeFragment extends Fragment implements View.OnClickListener {
+public class HomeFragment extends Fragment {
 
     CardView checkCard, locationCard, medicineCard, emergencyCard;
     ImageView profile,settings;
@@ -41,11 +42,45 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         medicineCard = (CardView) root.findViewById(R.id.medicine_card);
         emergencyCard = (CardView) root.findViewById(R.id.emergency_card);
 
-        //Add click listener to the cards
-        checkCard.setOnClickListener(this);
-        locationCard.setOnClickListener(this);
-        medicineCard.setOnClickListener(this);
-        emergencyCard.setOnClickListener(this);
+        emergencyCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment callFrag = new CallFragment();
+                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+
+                fm.replace(R.id.fragment_container,callFrag).commit();
+            }
+        });
+
+        medicineCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment medFrag = new MedicineFragment();
+                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+
+                fm.replace(R.id.fragment_container,medFrag).commit();
+            }
+        });
+
+        locationCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment locateFrag = new LocationFragment();
+                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+
+                fm.replace(R.id.fragment_container,locateFrag).commit();
+            }
+        });
+
+        checkCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment checkFrag = new CheckFragment();
+                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+
+                fm.replace(R.id.fragment_container,checkFrag).commit();
+            }
+        });
 
 
         profile = root.findViewById(R.id.userProfile);
@@ -69,29 +104,5 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         return root;
     }
 
-
-
-    @Override
-    public void onClick(View v) {
-        Fragment selectedFragment = null;
-
-        switch (v.getId()) {
-            case R.id.check_card:
-                selectedFragment = new CheckFragment();
-                break;
-            case R.id.location_card:
-                selectedFragment = new LocationFragment();
-                break;
-            case R.id.medicine_card:
-                _card:
-                selectedFragment = new MedicineFragment();
-                break;
-            case R.id.emergency_card:
-                _card:
-                selectedFragment = new CallFragment();
-            default:
-                break;
-        }
-    }
 }
 

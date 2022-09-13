@@ -12,9 +12,77 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Settings"
-        android:textSize="25dp"
+        android:textSize="30dp"
         android:gravity="center"
         android:textColor="@color/black"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/help_logo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_baseline_question_answer_24" />
+
+        <TextView
+            android:id="@+id/help"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/help_logo"
+            android:padding="10dp"
+            android:text="Help"
+            android:textColor="@color/black"
+            android:textSize="25dp" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/rightarrow_icon"
+            android:layout_toRightOf="@+id/help"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/about_logo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_baseline_info_24"/>
+        <TextView
+            android:id="@+id/about"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/about_logo"
+            android:layout_centerVertical="true"
+            android:text="About"
+            android:textSize="25dp"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/rightarrow_icon"
+            android:layout_toRightOf="@+id/about"/>
+
+    </RelativeLayout>
+
 
 </LinearLayout>
