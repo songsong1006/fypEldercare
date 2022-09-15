@@ -27,7 +27,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/invitationcode"
+                    android:text="Enter Invite code. If you want to join another circle."
                     android:textAlignment="center"
                     android:textSize="20sp"
                     android:textAllCaps="false"

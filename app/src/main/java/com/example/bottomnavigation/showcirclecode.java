@@ -76,11 +76,11 @@ public class showcirclecode extends AppCompatActivity {
     private void sendbuttonlistener() {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
-        String sharebody = "circle code: "+currentcode;
-        String sharesub = "gps helper invitation code";
+        String sharebody = "Circle code: "+currentcode;
+        String sharesub = "ElderCare invitation code";
         intent.putExtra(Intent.EXTRA_SUBJECT,sharesub);
         intent.putExtra(Intent.EXTRA_TEXT,sharebody);
-        startActivity(Intent.createChooser(intent, "sharing code"));
+        startActivity(Intent.createChooser(intent, "Sharing code"));
     }
 
     private void donetohomelistener() {

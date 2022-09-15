@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 String current_name = dataSnapshot.child(current_uid).child("firstname").getValue(String.class);
                 String current_email = dataSnapshot.child(current_uid).child("email").getValue(String.class);
 
-                String s1 = "Hi "+current_name;
+                String s1 = "Hi, "+current_name;
                 header_name.setText(s1);
                 header_email.setText(current_email);
             }
@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                         final double lat = locationResult.getLastLocation().getLatitude();
                         final double log = locationResult.getLastLocation().getLongitude();
                         latLng = new LatLng(lat, log);
-                        mMap.addMarker(new MarkerOptions().position(latLng).title("your current location"));
+                        mMap.addMarker(new MarkerOptions().position(latLng).title("Your current location"));
                         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15F));
 
                         //update latitude and longitude
@@ -153,11 +153,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                         databaseReference.child(current_uid).updateChildren(update).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
-                                Toast.makeText(MainActivity.this, "updated", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Updated", Toast.LENGTH_SHORT).show();
                             }
                         });
                     }else {
-                        Toast.makeText(MainActivity.this,"location not found", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this,"Location not found", Toast.LENGTH_SHORT).show();
                     }
                 }
             },getMainLooper());
@@ -172,8 +172,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
         String rationale = "Please provide location permission so that you can ...";
         Permissions.Options options = new Permissions.Options()
-                .setRationaleDialogTitle("location permission")
-                .setSettingsDialogTitle("warrning");
+                .setRationaleDialogTitle("Location permission")
+                .setSettingsDialogTitle("Warning");
 
         Permissions.check(this, permissions, rationale, options, new PermissionHandler() {
             @Override
@@ -236,7 +236,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()){
-            case R.id.nev_home:
+            case R.id.nev_location:
                 startActivity(new Intent(MainActivity.this, MainActivity.class));
                 finish();
                 break;
@@ -246,9 +246,23 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 /*getSupportActionBar().setTitle("profile");
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
                 break;
+            case R.id.nev_checkin:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new CheckFragment()).commit();
+                /*getSupportActionBar().setTitle("profile");
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
+                break;
             case R.id.nev_joiningc:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new joincirclefragment()).commit();
+                break;
+            case R.id.nev_home:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new HomeFragment()).commit();
+                break;
+            case R.id.nev_medicine:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new MedicineFragment()).commit();
                 break;
             case R.id.nev_invite:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -257,6 +271,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             case R.id.nev_mycircle:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new mycirclefragment()).commit();
+                break;
+            case R.id.nev_call:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new CallFragment()).commit();
+                break;
+            case R.id.nev_help:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new HelpFragment()).commit();
                 break;
             case R.id.nev_logout:
 

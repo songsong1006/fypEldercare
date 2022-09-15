@@ -38,6 +38,4 @@
         app:headerLayout="@layout/drawer_header" />
 
 
-
-
 </androidx.drawerlayout.widget.DrawerLayout>

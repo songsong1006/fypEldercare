@@ -92,7 +92,7 @@ public class NewRegister extends AppCompatActivity {
             final String strdate = dateFormat.format(date);
 
             if (TextUtils.isEmpty(first_name) || TextUtils.isEmpty(last_name) || TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
-                Toast.makeText(NewRegister.this, "fill the all field", Toast.LENGTH_SHORT).show();
+                Toast.makeText(NewRegister.this, "Fill the all field", Toast.LENGTH_SHORT).show();
                 loader.dismissloader();
             } else {
                 firebaseAuth.createUserWithEmailAndPassword(email, password)
@@ -108,7 +108,7 @@ public class NewRegister extends AppCompatActivity {
                                             .setValue(info).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {
-                                                    Toast.makeText(NewRegister.this, "submited..", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(NewRegister.this, "Submitted..", Toast.LENGTH_SHORT).show();
                                                     loader.dismissloader();
                                                     Intent in = new Intent(NewRegister.this, NewLogin.class);
                                                     startActivity(in);
@@ -117,14 +117,14 @@ public class NewRegister extends AppCompatActivity {
 
                                 } else {
                                     // If sign in fails, display a message to the user.
-                                    Toast.makeText(NewRegister.this, "database response error", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(NewRegister.this, "Database response error", Toast.LENGTH_SHORT).show();
                                     loader.dismissloader();
                                 }
                             }
                         });
             }
         } catch (NullPointerException e) {
-            Toast.makeText(NewRegister.this, "error:" + e, Toast.LENGTH_SHORT).show();
+            Toast.makeText(NewRegister.this, "Error:" + e, Toast.LENGTH_SHORT).show();
         }
     }
 

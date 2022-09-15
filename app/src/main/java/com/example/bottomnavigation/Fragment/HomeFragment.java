@@ -28,8 +28,6 @@ import com.google.android.gms.tasks.Task;
 public class HomeFragment extends Fragment {
 
     CardView checkCard, locationCard, medicineCard, emergencyCard;
-    ImageView profile,settings;
-
 
     @Nullable
     @Override
@@ -65,10 +63,7 @@ public class HomeFragment extends Fragment {
         locationCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment locateFrag = new LocationFragment();
-                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
-
-                fm.replace(R.id.fragment_container,locateFrag).commit();
+                startActivity(new Intent(getActivity(),MainActivity.class));
             }
         });
 
@@ -82,23 +77,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-
-        profile = root.findViewById(R.id.userProfile);
-        settings = root.findViewById(R.id.settings);
-
-        profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), ProfileActivity.class));
-            }
-        });
-
-        settings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), SettingsActivity.class));
-            }
-        });
 
 
         return root;

@@ -33,7 +33,7 @@ public class SelectUser extends AppCompatActivity {
         familyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SelectUser.this, Login2.class));
+                startActivity(new Intent(SelectUser.this, NewLogin.class));
                 Toast.makeText(SelectUser.this, "Welcome", Toast.LENGTH_SHORT).show();
             }
         });

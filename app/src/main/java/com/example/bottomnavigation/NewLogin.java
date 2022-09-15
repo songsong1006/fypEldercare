@@ -78,7 +78,7 @@ public class NewLogin extends AppCompatActivity {
         String email = logemail.getText().toString().trim();
         String password = logpass.getText().toString().trim();
         if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
-            Toast.makeText(NewLogin.this, "fill all fields", Toast.LENGTH_SHORT).show();
+            Toast.makeText(NewLogin.this, "Fill all fields", Toast.LENGTH_SHORT).show();
             loader.dismissloader();
         } else {
             firebaseAuth.signInWithEmailAndPassword(email, password)
@@ -87,12 +87,12 @@ public class NewLogin extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 loader.dismissloader();
-                                Toast.makeText(NewLogin.this, "success..", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(NewLogin.this, "Success..", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(NewLogin.this, showcirclecode.class);
                                 startActivity(intent);
                             } else {
                                 loader.dismissloader();
-                                Toast.makeText(NewLogin.this, "failed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(NewLogin.this, "Failed", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });

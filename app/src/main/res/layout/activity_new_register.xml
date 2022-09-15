@@ -21,6 +21,19 @@
         android:textSize="30sp"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/faded_signup_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp"
+        android:fontFamily="serif"
+        android:text="*The information cannot be edited in future*"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -33,7 +46,7 @@
             android:id="@+id/linearlayoutsign"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="40dp"
             android:orientation="vertical">
 
             <EditText
@@ -57,6 +70,8 @@
                 android:inputType="text"
                 android:textSize="20sp" />
 
+
+
             <EditText
                 android:id="@+id/edittext_signemail"
                 android:layout_width="match_parent"
@@ -69,11 +84,12 @@
                 android:textSize="20sp" />
 
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:passwordToggleEnabled="true"
+                android:layout_marginTop="10dp"
                 app:hintEnabled="false"
-                android:layout_marginTop="10dp">
+                app:passwordToggleEnabled="true">
 
                 <EditText
                     android:id="@+id/edittext_signpassword"
@@ -92,8 +108,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="35dp"
-                android:text="Sign Up"
                 android:background="@drawable/loginbtnbackground"
+                android:text="Sign Up"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />

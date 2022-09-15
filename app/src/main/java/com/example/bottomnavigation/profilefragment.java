@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class profilefragment extends Fragment {
 
-    TextView txtfirst, txtlast, txtemail, txtpassword;
+    TextView txtfirst, txtlast, txtemail;
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
@@ -33,7 +33,6 @@ public class profilefragment extends Fragment {
         txtfirst = view.findViewById(R.id.firstname_textview);
         txtlast = view.findViewById(R.id.lastname_textview);
         txtemail = view.findViewById(R.id.email_textview);
-        txtpassword = view.findViewById(R.id.password_textview);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
@@ -46,12 +45,10 @@ public class profilefragment extends Fragment {
                 String firstname = dataSnapshot.child("firstname").getValue(String.class);
                 String lastname = dataSnapshot.child("lastname").getValue(String.class);
                 String email = dataSnapshot.child("email").getValue(String.class);
-                String password = dataSnapshot.child("password").getValue(String.class);
 
                 txtfirst.setText(firstname);
                 txtlast.setText(lastname);
                 txtemail.setText(email);
-                txtpassword.setText(password);
             }
 
             @Override
