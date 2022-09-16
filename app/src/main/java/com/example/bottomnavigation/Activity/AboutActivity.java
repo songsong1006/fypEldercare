@@ -1,8 +1,10 @@
-package com.example.bottomnavigation;
+package com.example.bottomnavigation.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.bottomnavigation.R;
 
 public class AboutActivity extends AppCompatActivity {
 

@@ -1,10 +1,14 @@
-package com.example.bottomnavigation;
+package com.example.bottomnavigation.Model;
 
 public class NewUserModel {
     private String firstname, lastname, email, password, id, circle_id, date, image_url;
     private double latitude, longitude;
 
-    public NewUserModel(String id, String firstname, String lastname, String circle_id, String email, String password, String date, double latitude, double longitude, String image_url)
+    public NewUserModel(){
+
+    }
+
+    public NewUserModel(String id, String firstname, String lastname, String circle_id, String email, String password, String date, double latitude, double longitude)
     {
         this.id = id;
         this.firstname = firstname;
@@ -15,7 +19,6 @@ public class NewUserModel {
         this.date = date;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.image_url = image_url;
     }
 
     public String getImage_url() {

@@ -5,25 +5,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.bottomnavigation.Family.Login2;
-import com.example.bottomnavigation.Login;
-import com.example.bottomnavigation.MainActivity;
-import com.example.bottomnavigation.MainActivity2;
-import com.example.bottomnavigation.ProfileActivity;
+import com.example.bottomnavigation.Activity.MainActivity;
 import com.example.bottomnavigation.R;
-import com.example.bottomnavigation.SettingsActivity;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 
 public class HomeFragment extends Fragment {
 

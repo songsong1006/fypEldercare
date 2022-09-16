@@ -1,4 +1,4 @@
-package com.example.bottomnavigation;
+package com.example.bottomnavigation.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.bottomnavigation.Family.Login2;
+import com.example.bottomnavigation.R;
 
 public class SelectUser extends AppCompatActivity {
 

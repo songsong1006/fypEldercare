@@ -1,4 +1,4 @@
-package com.example.bottomnavigation;
+package com.example.bottomnavigation.Model;
 
 public class LocationHelper {
     private double latitude, longitude;

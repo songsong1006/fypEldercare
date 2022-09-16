@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layoutDescription="@xml/activity_splash_scene"
-    tools:context=".Splash">
+    tools:context=".Activity.Splash">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/backgroundLayout"
@@ -33,11 +33,10 @@
         android:id="@+id/whiteTwitter"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/sj_logo3"
+        android:src="@drawable/newlogo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="#3050F1"/>
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

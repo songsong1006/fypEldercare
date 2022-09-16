@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutActivity"
-    android:orientation="vertical">
+    tools:context=".Activity.AboutActivity"
+    android:orientation="vertical"
+    android:background="@drawable/home">
 
     <TextView
         android:layout_width="match_parent"
@@ -20,9 +21,10 @@
 
     <ImageView
         android:layout_gravity="center"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:src="@drawable/sj_logo3"/>
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/newlogo"
+        android:layout_marginBottom="50dp"/>
 
     <TextView
         android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package com.example.bottomnavigation;
+package com.example.bottomnavigation.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -9,7 +9,6 @@ import androidx.core.content.ContextCompat;
 import androidx.core.content.PermissionChecker;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
 
 import android.Manifest;
 import android.content.Context;
@@ -18,16 +17,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.bottomnavigation.Fragment.CallFragment;
 import com.example.bottomnavigation.Fragment.CheckFragment;
+import com.example.bottomnavigation.Fragment.HelpFragment;
 import com.example.bottomnavigation.Fragment.HomeFragment;
-import com.example.bottomnavigation.Fragment.LocationFragment;
 import com.example.bottomnavigation.Fragment.MedicineFragment;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.example.bottomnavigation.Fragment.invitecodefragment;
+import com.example.bottomnavigation.Fragment.joincirclefragment;
+import com.example.bottomnavigation.R;
+import com.example.bottomnavigation.Fragment.mycirclefragment;
+import com.example.bottomnavigation.Fragment.profilefragment;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -40,7 +42,6 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

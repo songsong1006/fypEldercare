@@ -1,4 +1,4 @@
-package com.example.bottomnavigation;
+package com.example.bottomnavigation.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.bottomnavigation.Model.NewUserModel;
+import com.example.bottomnavigation.ProgressbarLoader;
+import com.example.bottomnavigation.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -102,7 +105,7 @@ public class NewRegister extends AppCompatActivity {
                                 if (task.isSuccessful()) {
 
                                     String userid = firebaseAuth.getCurrentUser().getUid();
-                                    NewUserModel info = new NewUserModel(userid, first_name, last_name, generatecode(), email, password, strdate, 0, 0, "null");
+                                    NewUserModel info = new NewUserModel(userid, first_name, last_name, generatecode(), email, password, strdate, 0, 0);
                                     FirebaseDatabase.getInstance().getReference("users")
                                             .child(userid)
                                             .setValue(info).addOnCompleteListener(new OnCompleteListener<Void>() {

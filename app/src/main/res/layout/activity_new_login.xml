@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/skyblue"
-    tools:context=".NewLogin">
+    tools:context=".Activity.NewLogin">
 
     <TextView
         android:id="@+id/slide_login_text"
