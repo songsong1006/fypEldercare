@@ -7,6 +7,31 @@
     android:padding="10dp">
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/blank"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Welcome To ElderCare !"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
+
+    <ImageView
+        android:id="@+id/settingsBtn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_baseline_settings_24"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/blank"/>
+    </RelativeLayout>
 
     <LinearLayout
         android:clipToPadding="false"
@@ -14,7 +39,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="5dp">
         <TextView
             android:layout_width="wrap_content"

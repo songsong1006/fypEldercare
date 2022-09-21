@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SettingsActivity"
-    android:background="@drawable/home"
     android:orientation="vertical">
 
     <TextView
@@ -15,7 +14,7 @@
         android:textSize="30dp"
         android:gravity="center"
         android:textColor="@color/black"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="20dp"/>
 
 
@@ -48,8 +47,8 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_centerVertical="true"
-            android:src="@drawable/rightarrow_icon"
-            android:layout_toRightOf="@+id/help"/>
+            android:layout_toRightOf="@+id/help"
+            android:src="@drawable/rightarrow_icon" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -75,12 +74,13 @@
             android:padding="10dp"
             android:textColor="@color/black"
             android:layout_marginTop="20dp"/>
+
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_centerVertical="true"
-            android:src="@drawable/rightarrow_icon"
-            android:layout_toRightOf="@+id/about"/>
+            android:layout_toRightOf="@+id/about"
+            android:src="@drawable/rightarrow_icon" />
 
     </RelativeLayout>
 

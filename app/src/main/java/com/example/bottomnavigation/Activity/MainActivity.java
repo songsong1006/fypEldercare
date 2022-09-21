@@ -30,6 +30,7 @@ import com.example.bottomnavigation.Fragment.joincirclefragment;
 import com.example.bottomnavigation.R;
 import com.example.bottomnavigation.Fragment.mycirclefragment;
 import com.example.bottomnavigation.Fragment.profilefragment;
+import com.example.bottomnavigation.SettingsFragment;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -154,7 +155,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                         databaseReference.child(current_uid).updateChildren(update).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
-                                Toast.makeText(MainActivity.this, "Updated", Toast.LENGTH_SHORT).show();
+
                             }
                         });
                     }else {
@@ -253,10 +254,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 /*getSupportActionBar().setTitle("profile");
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
                 break;
-            case R.id.nev_joiningc:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new joincirclefragment()).commit();
-                break;
             case R.id.nev_home:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new HomeFragment()).commit();
@@ -265,10 +262,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new MedicineFragment()).commit();
                 break;
-            case R.id.nev_invite:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new invitecodefragment()).commit();
-                break;
             case R.id.nev_mycircle:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new mycirclefragment()).commit();
@@ -276,10 +269,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             case R.id.nev_call:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new CallFragment()).commit();
-                break;
-            case R.id.nev_help:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new HelpFragment()).commit();
                 break;
             case R.id.nev_logout:
 

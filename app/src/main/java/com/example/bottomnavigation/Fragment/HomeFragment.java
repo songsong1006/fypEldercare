@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
@@ -13,10 +15,12 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.bottomnavigation.Activity.MainActivity;
 import com.example.bottomnavigation.R;
+import com.example.bottomnavigation.SettingsFragment;
 
 public class HomeFragment extends Fragment {
 
     CardView checkCard, locationCard, medicineCard, emergencyCard;
+    ImageView settings;
 
     @Nullable
     @Override
@@ -28,6 +32,17 @@ public class HomeFragment extends Fragment {
         locationCard = (CardView) root.findViewById(R.id.location_card);
         medicineCard = (CardView) root.findViewById(R.id.medicine_card);
         emergencyCard = (CardView) root.findViewById(R.id.emergency_card);
+        settings = root.findViewById(R.id.settingsBtn);
+
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment callFrag = new SettingsFragment();
+                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+
+                fm.replace(R.id.fragment_container,callFrag).commit();
+            }
+        });
 
         emergencyCard.setOnClickListener(new View.OnClickListener() {
             @Override

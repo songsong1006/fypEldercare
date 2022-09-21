@@ -19,23 +19,15 @@ import com.example.bottomnavigation.R;
 public class HelpFragment extends Fragment {
 
     ImageView helpCall, helpMail;
-    Button aboutUs;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root =  inflater.inflate(R.layout.fragment_help,container,false);
 
-        aboutUs = root.findViewById(R.id.aboutUs);
         helpCall = root.findViewById(R.id.helpCall);
         helpMail = root.findViewById(R.id.helpMail);
 
-        aboutUs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), AboutActivity.class));
-            }
-        });
 
         helpCall.setOnClickListener(new View.OnClickListener() {
             @Override

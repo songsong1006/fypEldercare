@@ -8,7 +8,7 @@
             android:icon="@drawable/ic_baseline_home_24"/>
         <item
             android:id="@+id/nev_profile"
-            android:title="Profile"
+            android:title="Profile**Test"
             android:icon="@drawable/ic_baseline_person_24"/>
         <item
             android:id="@+id/nev_checkin"
@@ -18,14 +18,6 @@
             android:id="@+id/nev_location"
             android:title="Location"
             android:icon="@drawable/ic_baseline_location_on_24"/>
-        <item
-            android:id="@+id/nev_joiningc"
-            android:title="Join circle"
-            android:icon="@drawable/ic_baseline_person_add_alt_1_24"/>
-        <item
-            android:id="@+id/nev_invite"
-            android:title="Invite code"
-            android:icon="@drawable/ic_baseline_insert_invitation_24"/>
         <item
             android:id="@+id/nev_mycircle"
             android:title="My circle"
@@ -38,10 +30,6 @@
             android:id="@+id/nev_call"
             android:title="Emergency Call"
             android:icon="@drawable/ic_baseline_call_24"/>
-        <item
-            android:id="@+id/nev_help"
-            android:title="Help"
-            android:icon="@drawable/ic_baseline_info_24"/>
         <item
             android:id="@+id/nev_logout"
             android:title="Logout"
