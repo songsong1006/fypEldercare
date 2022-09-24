@@ -31,6 +31,7 @@ import com.example.bottomnavigation.R;
 import com.example.bottomnavigation.Fragment.mycirclefragment;
 import com.example.bottomnavigation.Fragment.profilefragment;
 import com.example.bottomnavigation.SettingsFragment;
+import com.example.bottomnavigation.test;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -244,7 +245,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 break;
             case R.id.nev_profile:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new profilefragment()).commit();
+                        new test()).commit();
                 /*getSupportActionBar().setTitle("profile");
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
                 break;
