@@ -6,11 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.bottomnavigation.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,6 +27,7 @@ public class invitecodefragment extends Fragment {
 
     TextView codetxt;
     Button sharebtn;
+    ImageView backBtn;
 
     DatabaseReference databaseReference;
     FirebaseAuth firebaseAuth;
@@ -39,11 +42,24 @@ public class invitecodefragment extends Fragment {
         codetxt = view.findViewById(R.id.code_textview);
         sharebtn = view.findViewById(R.id.sharebutton);
 
+
         sharebtn = view.findViewById(R.id.sharebutton);
         sharebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sharebuttonlistener();
+            }
+        });
+
+        backBtn = view.findViewById(R.id.backBtn3);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment callFrag = new SettingsFragment();
+                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+
+                fm.replace(R.id.fragment_container,callFrag).commit();
             }
         });
 

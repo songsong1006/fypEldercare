@@ -1,11 +1,9 @@
-package com.example.bottomnavigation;
+package com.example.bottomnavigation.Fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
@@ -13,15 +11,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.bottomnavigation.Activity.MainActivity;
-import com.example.bottomnavigation.Activity.NewLogin;
-import com.example.bottomnavigation.Fragment.CallFragment;
+import com.example.bottomnavigation.Fragment.AboutFragment;
 import com.example.bottomnavigation.Fragment.HelpFragment;
 import com.example.bottomnavigation.Fragment.invitecodefragment;
 import com.example.bottomnavigation.Fragment.joincirclefragment;
 import com.example.bottomnavigation.Fragment.profilefragment;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.example.bottomnavigation.R;
 
 public class SettingsFragment extends Fragment {
 

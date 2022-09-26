@@ -6,19 +6,18 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
-import com.example.bottomnavigation.Activity.AboutActivity;
 import com.example.bottomnavigation.R;
 
 public class HelpFragment extends Fragment {
 
-    ImageView helpCall, helpMail;
+    ImageView helpCall, helpMail,backBtn;
 
     @Nullable
     @Override
@@ -27,6 +26,17 @@ public class HelpFragment extends Fragment {
 
         helpCall = root.findViewById(R.id.helpCall);
         helpMail = root.findViewById(R.id.helpMail);
+        backBtn = root.findViewById(R.id.backBtn4);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment callFrag = new SettingsFragment();
+                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+
+                fm.replace(R.id.fragment_container,callFrag).commit();
+            }
+        });
 
 
         helpCall.setOnClickListener(new View.OnClickListener() {

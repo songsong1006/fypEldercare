@@ -6,11 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.bottomnavigation.Model.CircleJoin;
 import com.example.bottomnavigation.ProgressbarLoader;
@@ -30,6 +32,7 @@ public class joincirclefragment extends Fragment {
 
     EditText joinedit;
     Button joinbtn;
+    ImageView backBtn;
     DatabaseReference reference, circlerefernce;
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
@@ -42,6 +45,17 @@ public class joincirclefragment extends Fragment {
 
         joinedit = view.findViewById(R.id.join_edittext);
         joinbtn = view.findViewById(R.id.join_button);
+        backBtn = view.findViewById(R.id.backBtn2);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment callFrag = new SettingsFragment();
+                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+
+                fm.replace(R.id.fragment_container,callFrag).commit();
+            }
+        });
 
         loader = new ProgressbarLoader(getActivity());
         firebaseAuth = FirebaseAuth.getInstance();
@@ -92,14 +106,14 @@ public class joincirclefragment extends Fragment {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if (task.isSuccessful()) {
-                                            Toast.makeText(getActivity(), "joined success", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getActivity(), "Joined Successfully", Toast.LENGTH_SHORT).show();
                                             loader.dismissloader();
                                         }
                                     }
                                 });
                     }
                 } else {
-                    Toast.makeText(getActivity(), "this code is not available", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "This code is not available", Toast.LENGTH_SHORT).show();
                     loader.dismissloader();
                 }
             }

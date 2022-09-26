@@ -4,11 +4,14 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ScrollView
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/saddedwhite"
         android:padding="14dp">
+
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -24,39 +27,49 @@
                 android:orientation="vertical"
                 android:padding="14dp">
 
+                <ImageView
+                    android:id="@+id/backBtn2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_baseline_arrow_back_24"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Enter Invite code. If you want to join another circle."
+                    android:layout_gravity="center_horizontal"
+                    android:text="Enter invite code.\nIf you want to join another circle."
                     android:textAlignment="center"
-                    android:textSize="20sp"
                     android:textAllCaps="false"
-                    android:layout_gravity="center_horizontal"/>
+                    android:textSize="20sp" />
+
                 <EditText
                     android:id="@+id/join_edittext"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:textSize="25sp"
-                    android:textAlignment="center"
-                    android:inputType="number"
-                    android:layout_marginTop="10dp"
                     android:layout_marginStart="40dp"
-                    android:layout_marginEnd="40dp"/>
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="40dp"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:textSize="25sp" />
+
                 <Button
                     android:id="@+id/join_button"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:text="@string/join"
-                    android:background="@drawable/loginbtnbackground"
-                    android:textColor="@color/white"
-                    android:textAllCaps="false"
-                    android:textSize="25sp"
+                    android:layout_gravity="center"
                     android:layout_marginStart="100dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="100dp"
-                    android:layout_marginTop="20dp"/>
+                    android:background="@drawable/loginbtnbackground"
+                    android:text="@string/join"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-    </ScrollView>
+    </LinearLayout>
 
 
 </RelativeLayout>

@@ -22,15 +22,10 @@ import android.widget.Toast;
 
 import com.example.bottomnavigation.Fragment.CallFragment;
 import com.example.bottomnavigation.Fragment.CheckFragment;
-import com.example.bottomnavigation.Fragment.HelpFragment;
 import com.example.bottomnavigation.Fragment.HomeFragment;
 import com.example.bottomnavigation.Fragment.MedicineFragment;
-import com.example.bottomnavigation.Fragment.invitecodefragment;
-import com.example.bottomnavigation.Fragment.joincirclefragment;
 import com.example.bottomnavigation.R;
 import com.example.bottomnavigation.Fragment.mycirclefragment;
-import com.example.bottomnavigation.Fragment.profilefragment;
-import com.example.bottomnavigation.SettingsFragment;
 import com.example.bottomnavigation.test;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;

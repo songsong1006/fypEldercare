@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.bumptech.glide.Glide;
 import com.example.bottomnavigation.Model.NewUserModel;
@@ -43,6 +45,8 @@ public class profilefragment extends Fragment {
     FirebaseStorage firebaseStorage;
     FirebaseDatabase firebaseDatabase;
 
+    ImageView backBtn;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -52,6 +56,18 @@ public class profilefragment extends Fragment {
         txtlast = view.findViewById(R.id.lastname_textview);
         txtemail = view.findViewById(R.id.email_textview);
         profileImg = view.findViewById(R.id.imageView);
+
+        backBtn = view.findViewById(R.id.backBtn);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment callFrag = new SettingsFragment();
+                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+
+                fm.replace(R.id.fragment_container,callFrag).commit();
+            }
+        });
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();
