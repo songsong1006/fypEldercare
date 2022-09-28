@@ -14,9 +14,13 @@ import androidx.annotation.Nullable;
 
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 
 public class test extends Fragment {
     Button reminder;
+
+    FloatingActionButton addRecordBtn;
 
 
 
@@ -26,12 +30,22 @@ public class test extends Fragment {
         View root = inflater.inflate(R.layout.fragment_test, container, false);
 
         reminder = root.findViewById(R.id.reminder);
+        addRecordBtn = root.findViewById(R.id.add_record);
 
         reminder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), TestActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        addRecordBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AddRecordActivity.class);
+                startActivity(intent);
+
             }
         });
 

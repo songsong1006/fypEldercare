@@ -4,6 +4,7 @@
     package="com.example.bottomnavigation">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -22,14 +23,17 @@
         android:theme="@style/Theme.BottomNavigation"
         tools:targetApi="31">
         <activity
+            android:name=".AddRecordActivity"
+            android:exported="false" />
+        <activity
             android:name=".TestActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.AddReminderActivity"
             android:parentActivityName=".TestActivity">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".TestActivity"/>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".TestActivity" />
         </activity>
         <activity
             android:name=".Activity.AboutActivity"
