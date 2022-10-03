@@ -210,6 +210,13 @@ public class AddRecordActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+
+        if(resultCode == RESULT_OK){
+            if (requestCode == IMAGE_PICK_GALLERY_CODE){
+
+            }
+        }
+
         super.onActivityResult(requestCode, resultCode, data);
     }
 }
