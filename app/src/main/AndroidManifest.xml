@@ -118,6 +118,9 @@
             android:name=".Activity.MainActivity"
             android:exported="true" />
 
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Theme.BottomNavigation"/>
+
         <provider
             android:name=".data.AlarmReminderProvider"
             android:authorities="com.example.bottomnavigation"

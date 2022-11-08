@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -21,6 +22,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -47,12 +50,18 @@ public class AddRecordActivity extends AppCompatActivity {
 
     ActionBar actionBar;
 
+    Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_record);
 
-        actionBar = getSupportActionBar();
+        toolbar = findViewById(R.id.home_toolbar2);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Add Record");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         medicineImage = findViewById(R.id.medicine_image);
         txtmedName2 = findViewById(R.id.txtmedName2);
@@ -238,9 +247,35 @@ public class AddRecordActivity extends AppCompatActivity {
         if (resultCode == RESULT_OK) {
             if (requestCode == IMAGE_PICK_GALLERY_CODE) {
 
+                CropImage.activity(data.getData())
+                        .setGuidelines(CropImageView.Guidelines.ON)
+                        .setAspectRatio(1,1)
+                        .start(this);
+
             } else if (requestCode == IMAGE_PICK_CAMERA_CODE) {
 
+                CropImage.activity(imageUri)
+                        .setGuidelines(CropImageView.Guidelines.ON)
+                        .setAspectRatio(1,1)
+                        .start(this);
+
             }
+            else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE){
+                CropImage.ActivityResult result = CropImage.getActivityResult(data);
+                if (resultCode == RESULT_OK){
+                    Uri resultUri = result.getUri();
+                    imageUri = resultUri;
+
+                    medicineImage.setImageURI(resultUri);
+                }
+                else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE){
+                    Exception error = result.getError();
+
+                    Toast.makeText(this, ""+error, Toast.LENGTH_SHORT).show();
+
+                }
+            }
+
         }
 
         super.onActivityResult(requestCode, resultCode, data);
