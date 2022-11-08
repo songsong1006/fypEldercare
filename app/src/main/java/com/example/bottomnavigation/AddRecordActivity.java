@@ -41,6 +41,10 @@ public class AddRecordActivity extends AppCompatActivity {
 
     Uri imageUri;
 
+    String name, tablets, times, food;
+
+    MyDbHelper dbHelper;
+
     ActionBar actionBar;
 
     @Override
@@ -49,9 +53,6 @@ public class AddRecordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_record);
 
         actionBar = getSupportActionBar();
-        actionBar.setTitle("Add New Medicine");
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setDisplayHomeAsUpEnabled(true);
 
         medicineImage = findViewById(R.id.medicine_image);
         txtmedName2 = findViewById(R.id.txtmedName2);
@@ -59,6 +60,8 @@ public class AddRecordActivity extends AppCompatActivity {
         txtFood2 = findViewById(R.id.txtFood2);
         txtTimesDaily2 = findViewById(R.id.txtTimesDaily2);
         saveBtn = findViewById(R.id.saveBtn);
+
+        dbHelper = new MyDbHelper(this);
 
         cameraPermissions = new String[] {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
         storagePermissions = new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -75,9 +78,30 @@ public class AddRecordActivity extends AppCompatActivity {
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                inputData();
 
             }
         });
+    }
+
+    private void inputData() {
+        name = ""+txtmedName2.getText().toString().trim();
+        tablets = ""+txtTablets2.getText().toString().trim();
+        food = ""+txtFood2.getText().toString().trim();
+        times = ""+txtTimesDaily2.getText().toString().trim();
+
+        String timestamp = ""+System.currentTimeMillis();
+        long id = dbHelper.insertRecord(
+                "" + name,
+                "" + imageUri,
+                "" + tablets,
+                "" + times,
+                "" + food,
+                "" + timestamp,
+                "" + timestamp
+        );
+
+        Toast.makeText(this, "Record Added Against ID: " + id, Toast.LENGTH_SHORT).show();
     }
 
     private void imagePickDialog() {
@@ -211,8 +235,10 @@ public class AddRecordActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 
-        if(resultCode == RESULT_OK){
-            if (requestCode == IMAGE_PICK_GALLERY_CODE){
+        if (resultCode == RESULT_OK) {
+            if (requestCode == IMAGE_PICK_GALLERY_CODE) {
+
+            } else if (requestCode == IMAGE_PICK_CAMERA_CODE) {
 
             }
         }
