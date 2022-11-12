@@ -15,11 +15,11 @@ public class AlarmScheduler {
                 ReminderAlarmService.getReminderPendingIntent(context, reminderTask);
 
 
-        if (Build.VERSION.SDK_INT >= 23) {
+        if (Build.VERSION.SDK_INT >= 32) {
 
             manager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, alarmTime, operation);
 
-        } else if (Build.VERSION.SDK_INT >= 19) {
+        } else if (Build.VERSION.SDK_INT >= 21) {
 
             manager.setExact(AlarmManager.RTC_WAKEUP, alarmTime, operation);
 

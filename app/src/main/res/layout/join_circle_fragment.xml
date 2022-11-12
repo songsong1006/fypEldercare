@@ -38,6 +38,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:text="Enter invite code.\nIf you want to join another circle."
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-medium"
                     android:textAlignment="center"
                     android:textAllCaps="false"
                     android:textSize="20sp" />
@@ -64,9 +66,9 @@
                     android:background="@drawable/loginbtnbackground"
                     android:text="@string/join"
                     android:textAlignment="center"
-                    android:textAllCaps="false"
+                    android:textAllCaps="true"
                     android:textColor="@color/white"
-                    android:textSize="25sp" />
+                    android:textSize="20sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>

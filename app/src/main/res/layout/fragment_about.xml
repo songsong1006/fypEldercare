@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:text="About Us"
         android:textStyle="bold"
+        android:fontFamily="serif"
         android:textSize="30dp"
         android:gravity="center"
         android:textColor="@color/black"

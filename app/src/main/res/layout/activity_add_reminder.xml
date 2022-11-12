@@ -9,39 +9,40 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:contentInsetLeft="0dp"
         app:contentInsetStart="16dp"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:background="?attr/colorPrimary" />
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_below="@+id/toolbar"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:id="@+id/add_reminder_layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="148dp"
+        android:layout_below="@+id/toolbar"
         android:background="@color/colorPrimary"
         android:orientation="vertical"
-        android:layout_height="148dp">
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <EditText
-            android:layout_width="match_parent"
             android:id="@+id/reminder_title"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
             android:layout_marginLeft="72dp"
+            android:layout_marginRight="16dp"
+            android:fontFamily="serif"
+            android:gravity="top|left"
             android:hint="Reminder"
-            android:textSize="25dp"
+            android:inputType="textCapWords|textMultiLine"
             android:lines="4"
             android:minLines="4"
-            android:gravity="top|left"
-            android:textColor="@android:color/white"
             android:scrollHorizontally="false"
+            android:textColor="@android:color/white"
             android:textColorHint="@color/primary_text_disabled_material_dark"
-            android:inputType="textCapWords|textMultiLine"
-            android:layout_marginRight="16dp"
-            android:layout_height="140dp"/>
+            android:textSize="25dp" />
 
     </LinearLayout>
 
@@ -63,6 +64,7 @@
                 android:layout_marginLeft="72dp"
                 android:layout_marginTop="8dp"
                 android:gravity="center_vertical"
+                android:fontFamily="sans-serif-medium"
                 android:text="Details"
                 android:textColor="@color/abc_secondary_text_material_dark"
                 android:textSize="15dp" />
@@ -97,6 +99,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Date"
+                        android:fontFamily="sans-serif-medium"
                         android:textColor="@color/abc_primary_text_material_dark"
                         android:textSize="15dp" />
 
@@ -141,6 +144,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Time"
+                        android:fontFamily="sans-serif-medium"
                         android:textColor="@color/abc_primary_text_material_dark"
                         android:textSize="15dp" />
 
@@ -183,6 +187,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Repeat"
+                        android:fontFamily="sans-serif-medium"
                         android:textColor="@color/abc_primary_text_material_dark"
                         android:textSize="15dp" />
 
@@ -240,6 +245,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Repetition Interval"
+                        android:fontFamily="sans-serif-medium"
                         android:textColor="@color/abc_primary_text_material_dark"
                         android:textSize="15dp" />
 
@@ -284,6 +290,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Type of Repetitions"
+                        android:fontFamily="sans-serif-medium"
                         android:textColor="@color/abc_primary_text_material_dark"
                         android:textSize="15dp" />
 
@@ -315,8 +322,8 @@
         android:clickable="true"
         android:onClick="selectFab1"
         fab:fab_icon="@drawable/ic_baseline_notifications_off_24"
-        fab:fab_colorNormal="@color/colorAccent"
-        fab:fab_colorPressed="@color/mdtp_red"
+        fab:fab_colorNormal="@color/white"
+        fab:fab_colorPressed="@color/colorAccent"
         app:fab_size="normal"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="168dp"
@@ -334,8 +341,8 @@
         android:clickable="true"
         android:onClick="selectFab2"
         app:fab_size="normal"
-        fab:fab_colorNormal="@color/colorAccent"
-        fab:fab_colorPressed="@color/mdtp_red"
+        fab:fab_colorNormal="@color/white"
+        fab:fab_colorPressed="@color/colorAccent"
         fab:fab_icon="@drawable/ic_baseline_notifications_active_24" />
 
 </RelativeLayout>

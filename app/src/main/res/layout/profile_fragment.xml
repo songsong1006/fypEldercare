@@ -54,14 +54,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
             android:text="@string/first_name"
-            android:textColor="@color/skyblue" />
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/firstname_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
+            android:fontFamily="serif"
             android:textColor="@color/black"
             android:textSize="18sp" />
 
@@ -70,13 +73,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:text="@string/last_name"
-            android:textColor="@color/skyblue" />
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/lastname_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
+            android:fontFamily="serif"
             android:textColor="@color/black"
             android:textSize="18sp" />
 
@@ -85,13 +91,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:text="@string/profile_email"
-            android:textColor="@color/skyblue" />
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/email_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
+            android:fontFamily="serif"
             android:textColor="@color/black"
             android:textSize="18sp" />
 

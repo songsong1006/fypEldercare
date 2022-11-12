@@ -6,11 +6,23 @@
     android:padding="10dp"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Check In"
+        android:fontFamily="serif"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="35sp" />
+
     <ImageView
         android:id="@+id/check_inBtn"
         android:layout_marginTop="100dp"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_gravity="center"
         android:src="@drawable/ic_baseline_check_circle_243"/>
 
@@ -20,8 +32,11 @@
         android:layout_centerInParent="true"
         android:textAlignment="center"
         android:layout_gravity="center"
-        android:text="Click the button to update your position!"
+        android:fontFamily="sans-serif-medium"
+        android:text="Click the button to \nupdate your position first!"
         android:textSize="20sp"
+
+        android:textStyle="italic"
         android:textColor="@color/black"
         android:layout_marginTop="50dp"/>
 

@@ -34,7 +34,7 @@
         app:itemHorizontalPadding="20dp"
         app:itemIconPadding="20dp"
         app:menu="@menu/menu"
-        app:itemIconTint="@color/skyblue"
+        app:itemIconTint="@color/colorPrimary"
         app:headerLayout="@layout/drawer_header" />
 
 

@@ -137,12 +137,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 public void onLocationResult(LocationResult locationResult) {
                     if (locationResult != null)
                     {
-                        mMap.clear();
-                        final double lat = locationResult.getLastLocation().getLatitude();
-                        final double log = locationResult.getLastLocation().getLongitude();
-                        latLng = new LatLng(lat, log);
-                        mMap.addMarker(new MarkerOptions().position(latLng).title("Your current location"));
-                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15F));
+                            mMap.clear();
+                            final double lat = locationResult.getLastLocation().getLatitude();
+                            final double log = locationResult.getLastLocation().getLongitude();
+                            latLng = new LatLng(lat, log);
+                            mMap.addMarker(new MarkerOptions().position(latLng).title("Your current location"));
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15F));
+
 
                         //update latitude and longitude
                         Map<String, Object> update = new HashMap<>();
@@ -154,6 +155,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                             }
                         });
+
                     }else {
                         Toast.makeText(MainActivity.this,"Location not found", Toast.LENGTH_SHORT).show();
                     }
@@ -273,7 +275,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 {
                     firebaseAuth.signOut();
                     finish();
-                    startActivity(new Intent(MainActivity.this, NewLogin.class));
+                    startActivity(new Intent(MainActivity.this, SelectUser.class));
                 }
                 break;
         }

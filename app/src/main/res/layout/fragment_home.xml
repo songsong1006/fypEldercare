@@ -19,18 +19,19 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:fontFamily="serif"
             android:text="Welcome To ElderCare !"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold|italic" />
 
-    <ImageView
-        android:id="@+id/settingsBtn"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:src="@drawable/ic_baseline_settings_24"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@id/blank"/>
+        <ImageView
+            android:id="@+id/settingsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/blank"
+            android:src="@drawable/ic_baseline_settings_24" />
     </RelativeLayout>
 
     <LinearLayout
@@ -45,6 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Home"
+            android:fontFamily="serif"
             android:textStyle="bold"
             android:textAllCaps="true"
             android:textColor="@color/black"

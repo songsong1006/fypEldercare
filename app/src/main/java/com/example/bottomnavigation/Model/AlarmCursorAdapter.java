@@ -62,8 +62,6 @@ public class AlarmCursorAdapter extends CursorAdapter {
         setActiveImage(active);
 
 
-
-
     }
 
     // Set reminder title view

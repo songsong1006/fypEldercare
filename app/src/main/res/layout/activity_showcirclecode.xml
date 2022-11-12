@@ -53,26 +53,27 @@
                     android:layout_marginTop="10dp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
         <Button
             android:id="@+id/sendbutton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_below="@id/cardview"
-            android:text="Send"
-            android:textColor="#ffffff"
-            android:background="@drawable/loginbtnbackground"
-            android:textAllCaps="false"
-            android:textSize="20sp"
-            android:layout_marginTop="30dp"
             android:layout_marginStart="110dp"
-            android:layout_marginEnd="110dp"/>
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="110dp"
+            android:background="@drawable/loginbtnbackground"
+            android:text="Send"
+            android:textAllCaps="true"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
         <TextView
             android:id="@+id/button_done"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Done"
             android:textStyle="bold"
-            android:textAllCaps="false"
+            android:textAllCaps="true"
             android:textSize="20sp"
             android:layout_marginTop="15dp"
             android:layout_below="@id/sendbutton"
