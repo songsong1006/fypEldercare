@@ -6,7 +6,7 @@ public class Constants {
     public static final String DB_NAME = "MY_RECORDS_DB";
 
     //db version
-    public static final int DB_VERSION = 1;
+    public static final int DB_VERSION = 2;
 
     //table name
     public static final String TABLE_NAME = "MY_RECORDS_TABLE";

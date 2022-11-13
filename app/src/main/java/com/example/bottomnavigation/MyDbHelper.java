@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class MyDbHelper extends SQLiteOpenHelper {
+
     public MyDbHelper(@Nullable Context context) {
         super(context, Constants.DB_NAME, null, Constants.DB_VERSION);
     }

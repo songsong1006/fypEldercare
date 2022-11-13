@@ -23,5 +23,12 @@
         android:src="@drawable/ic_baseline_add_24"
         android:backgroundTint="#FF8400"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/medicine_recycle"
+        android:paddingTop="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp" />
+
 
 </RelativeLayout>
