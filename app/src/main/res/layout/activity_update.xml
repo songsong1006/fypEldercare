@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddRecord2Activity">
+    tools:context=".UpdateActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Medicine"
+        android:text="Update Medicine"
         android:textSize="30dp"
         android:gravity="center"
         android:layout_marginTop="30dp"
@@ -34,7 +34,7 @@
             android:textColor="@color/black"/>
 
         <EditText
-            android:id="@+id/txtmedName3"
+            android:id="@+id/txtmedName4"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginLeft="10dp"
@@ -55,7 +55,7 @@
             android:textColor="@color/black"/>
 
         <EditText
-            android:id="@+id/txtTablets3"
+            android:id="@+id/txtTablets4"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginLeft="10dp"
@@ -76,7 +76,7 @@
             android:textColor="@color/black"/>
 
         <EditText
-            android:id="@+id/txtTimesDaily3"
+            android:id="@+id/txtTimesDaily4"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginLeft="10dp"
@@ -98,7 +98,7 @@
             android:textColor="@color/black"/>
 
         <EditText
-            android:id="@+id/txtFood3"
+            android:id="@+id/txtFood4"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginLeft="10dp"
@@ -110,7 +110,7 @@
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/saveBtn3"
+        android:id="@+id/saveBtn4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"

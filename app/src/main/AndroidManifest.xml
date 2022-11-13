@@ -24,9 +24,12 @@
         android:theme="@style/Theme.BottomNavigation"
         tools:targetApi="31">
         <activity
+            android:name=".UpdateActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddRecord2Activity"
             android:exported="false"
-            android:label="Add Medicine"/>
+            android:label="Add Medicine" />
         <activity
             android:name=".AddRecordActivity"
             android:exported="false" />
