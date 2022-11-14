@@ -1,5 +1,6 @@
 package com.example.bottomnavigation;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -28,13 +29,25 @@ public class UpdateActivity extends AppCompatActivity {
 
         floatingActionButton = findViewById(R.id.saveBtn4);
 
+        //we call this
+        getAndSetIntentData();
+
+
+
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                MyDatabaseHelper myDatabaseHelper = new MyDatabaseHelper(UpdateActivity.this);
+                name = name_input.getText().toString().trim();
+                tablets = tablets_input.getText().toString().trim();
+                times = times_input.getText().toString().trim();
+                food = food_input.getText().toString().trim();
+                myDatabaseHelper.updateData(id, name, tablets, times, food);
+
             }
         });
-        getAndSetIntentData();
+
     }
 
     void getAndSetIntentData(){

@@ -18,13 +18,13 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     private static final String TABLE_NAME = "my_medicine";
-    private static final String COLUMN_ID = "id";
+    private static final String COLUMN_ID = "_id";
     private static final String COLUMN_NAME = "medicine_name";
     private static final String COLUMN_TABLETS = "medicine_tablet";
     private static final String COLUMN_TIMES = "medicine_times";
     private static final String COLUMN_FOOD = "medicine_food";
 
-    public MyDatabaseHelper(@Nullable Context context) {
+    MyDatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
     }
@@ -77,7 +77,7 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    void updateData(String row_id, String name, String tablets, int times, String food){
+    void updateData(String row_id, String name, String tablets, String times, String food){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COLUMN_NAME,name);

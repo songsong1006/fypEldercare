@@ -74,13 +74,26 @@ public class test extends Fragment {
 
         storeDataInArrays();
 
-        customAdapter = new CustomAdapter(getActivity(), medicine_id, medicine_name,
+        customAdapter = new CustomAdapter(getActivity(),getActivity(), medicine_id, medicine_name,
                         medicine_tablets, medicine_times, medicine_food);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
 
         return root;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1){
+            getFragmentManager()
+                    .beginTransaction()
+                    .detach(this)
+                    .attach(this)
+                    .addToBackStack(null)
+                    .commit();
+        }
     }
 
     void storeDataInArrays(){

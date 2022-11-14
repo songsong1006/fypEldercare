@@ -1,6 +1,7 @@
 package com.example.bottomnavigation;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -18,11 +19,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
 
     private Context context;
+    Activity activity;
     private ArrayList medicine_id, medicine_name, medicine_tablets, medicine_times, medicine_food;
 
 
-    CustomAdapter(Context context, ArrayList medicine_id, ArrayList medicine_name,
+    CustomAdapter(Activity activity,Context context, ArrayList medicine_id, ArrayList medicine_name,
                   ArrayList medicine_tablets, ArrayList medicine_times, ArrayList medicine_food){
+        this.activity = activity;
         this.context = context;
         this.medicine_id = medicine_id;
         this.medicine_name = medicine_name;
@@ -57,7 +60,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                 intent.putExtra("tablets",String.valueOf(medicine_tablets.get(position)));
                 intent.putExtra("times",String.valueOf(medicine_times.get(position)));
                 intent.putExtra("food",String.valueOf(medicine_food.get(position)));
-                context.startActivity(intent);
+                activity.startActivityForResult(intent, 1);
             }
         });
     }
