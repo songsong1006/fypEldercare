@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         });
     }
 
-    private void update_location() {
+    private double update_location() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)== PermissionChecker.PERMISSION_GRANTED &&
                 ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_COARSE_LOCATION)==PermissionChecker.PERMISSION_GRANTED)
         {
@@ -166,6 +166,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         {
             callpermissionlistener();
         }
+
+        return 0;
     }
 
     private void callpermissionlistener() {

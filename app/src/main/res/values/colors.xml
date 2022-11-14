@@ -14,5 +14,6 @@
     <color name="saddedwhite">#EBEBEB</color>
     <color name="LowOpasityBlack">#80000000</color>
     <color name="line">#C3C3C3</color>
+    <color name="red">#FF0000</color>
 
 </resources>

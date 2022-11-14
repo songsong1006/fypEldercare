@@ -5,10 +5,15 @@ import android.database.Cursor;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowId;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -36,6 +41,9 @@ public class test extends Fragment {
 
     CustomAdapter customAdapter;
 
+    ImageView empty_imageview;
+    TextView no_data;
+
 
 
     @Nullable
@@ -46,6 +54,9 @@ public class test extends Fragment {
         reminder = root.findViewById(R.id.reminder);
         addRecordBtn = root.findViewById(R.id.add_record);
         recyclerView = root.findViewById(R.id.medicine_recycle);
+        empty_imageview = root.findViewById(R.id.imageView2);
+        no_data = root.findViewById(R.id.textView5);
+
 
         reminder.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +110,8 @@ public class test extends Fragment {
     void storeDataInArrays(){
         Cursor cursor = myDatabaseHelper.readAllData();
         if(cursor.getCount() == 0){
+            empty_imageview.setVisibility(View.VISIBLE);
+            no_data.setVisibility(View.VISIBLE);
             Toast.makeText(getActivity(), "No data.", Toast.LENGTH_SHORT).show();
         }else{
             while(cursor.moveToNext()){
@@ -107,8 +120,11 @@ public class test extends Fragment {
                 medicine_tablets.add(cursor.getString(2));
                 medicine_times.add(cursor.getString(3));
                 medicine_food.add(cursor.getString(4));
+                empty_imageview.setVisibility(View.GONE);
+                no_data.setVisibility(View.GONE);
             }
         }
     }
+
 
 }
