@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.bottomnavigation.Activity.MainActivity;
 import com.example.bottomnavigation.R;
+import com.example.bottomnavigation.test;
 
 public class HomeFragment extends Fragment {
 
@@ -55,7 +56,7 @@ public class HomeFragment extends Fragment {
         medicineCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment medFrag = new MedicineFragment();
+                Fragment medFrag = new test();
                 FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
 
                 fm.replace(R.id.fragment_container,medFrag).commit();

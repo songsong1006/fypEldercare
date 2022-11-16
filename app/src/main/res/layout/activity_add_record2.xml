@@ -4,34 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddRecord2Activity">
+    tools:context=".AddRecord2Activity"
+    android:background="@drawable/medication">
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Medicine"
-        android:textSize="30dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="serif"
         android:gravity="center"
-        android:layout_marginTop="30dp"
+        android:text="Add Medicine"
         android:textColor="@color/black"
-        android:fontFamily="serif"/>
+        android:textSize="30dp" />
 
     <LinearLayout
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:fontFamily="sans-serif-medium"
-            android:textSize="20sp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="5dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
             android:text="Medicine Name"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/txtmedName3"
@@ -46,13 +48,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="20sp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="5dp"
             android:fontFamily="sans-serif-medium"
+            android:gravity="center"
             android:text="Tablets"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/txtTablets3"
@@ -67,13 +69,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="20sp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="5dp"
             android:fontFamily="sans-serif-medium"
+            android:gravity="center"
             android:text="Times Daily"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/txtTimesDaily3"
@@ -83,19 +85,19 @@
             android:layout_marginRight="10dp"
             android:background="@drawable/rounded"
             android:gravity="center"
-            android:inputType="number"
-            android:hint="3" />
+            android:hint="3"
+            android:inputType="number" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="20sp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="5dp"
             android:fontFamily="sans-serif-medium"
+            android:gravity="center"
             android:text="Before / After Meal?"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/txtFood3"

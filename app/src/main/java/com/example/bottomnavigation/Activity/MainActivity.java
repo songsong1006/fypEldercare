@@ -242,12 +242,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 startActivity(new Intent(MainActivity.this, MainActivity.class));
                 finish();
                 break;
-            case R.id.nev_profile:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new test()).commit();
+            //case R.id.nev_profile:
+              //  getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                //        new MedicineFragment()).commit();
                 /*getSupportActionBar().setTitle("profile");
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
-                break;
+                //break;
             case R.id.nev_checkin:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new CheckFragment()).commit();
@@ -260,7 +260,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 break;
             case R.id.nev_medicine:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new MedicineFragment()).commit();
+                        new test()).commit();
                 break;
             case R.id.nev_mycircle:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
