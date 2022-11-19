@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.example.bottomnavigation.Fragment.CallFragment;
 import com.example.bottomnavigation.Fragment.CheckFragment;
 import com.example.bottomnavigation.Fragment.HomeFragment;
+import com.example.bottomnavigation.Fragment.LocationFragment;
 import com.example.bottomnavigation.Fragment.MedicineFragment;
 import com.example.bottomnavigation.R;
 import com.example.bottomnavigation.Fragment.mycirclefragment;
@@ -229,6 +230,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+        mMap.getUiSettings().setZoomGesturesEnabled(true);
+
         /*LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));*/
@@ -238,8 +241,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()){
             case R.id.nev_location:
-                startActivity(new Intent(MainActivity.this, MainActivity.class));
-                finish();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new LocationFragment()).commit();
                 break;
             //case R.id.nev_profile:
               //  getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

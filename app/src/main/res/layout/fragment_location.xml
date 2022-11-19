@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/location">
+    android:background="@drawable/location"
+    android:orientation="vertical">
+
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Location Fragment"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="My Location"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
-</RelativeLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/map2"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_marginTop="20dp"
+        android:layout_width="350dp"
+        android:layout_height="600dp"
+        android:layout_gravity="center"/>
+
+</LinearLayout>
