@@ -1,5 +1,7 @@
 package com.example.bottomnavigation.Activity;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
@@ -14,7 +16,10 @@ import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -25,8 +30,10 @@ import com.example.bottomnavigation.Fragment.CheckFragment;
 import com.example.bottomnavigation.Fragment.HomeFragment;
 import com.example.bottomnavigation.Fragment.LocationFragment;
 import com.example.bottomnavigation.Fragment.MedicineFragment;
+import com.example.bottomnavigation.NotificationC;
 import com.example.bottomnavigation.R;
 import com.example.bottomnavigation.Fragment.mycirclefragment;
+import com.example.bottomnavigation.reminder.ReminderAlarmService;
 import com.example.bottomnavigation.test;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -71,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     DatabaseReference databaseReference;
     String current_uid;
     AlertDialog.Builder builder;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
