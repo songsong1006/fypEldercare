@@ -285,9 +285,27 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 firebaseUser = firebaseAuth.getCurrentUser();
                 if (firebaseUser != null)
                 {
-                    firebaseAuth.signOut();
-                    finish();
-                    startActivity(new Intent(MainActivity.this, SelectUser.class));
+                    builder = new AlertDialog.Builder(MainActivity.this);
+                    builder.setMessage(R.string.dialog_message).setTitle(R.string.dialog_title);
+                    builder.setMessage("Do you want to logout the application ?")
+                            .setCancelable(false)
+                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    firebaseAuth.signOut();
+                                    finish();
+                                    startActivity(new Intent(MainActivity.this, SelectUser.class));
+                                }
+                            })
+                            .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                }
+                            });
+                    AlertDialog alert = builder.create();
+                    alert.setTitle("Exit");
+                    alert.show();
                 }
                 break;
         }
