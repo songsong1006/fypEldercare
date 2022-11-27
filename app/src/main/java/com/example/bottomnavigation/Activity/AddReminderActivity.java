@@ -27,7 +27,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.bottomnavigation.data.AlarmReminderContract;
+import com.example.bottomnavigation.Data.AlarmReminderContract;
 import com.example.bottomnavigation.reminder.AlarmScheduler;
 import com.example.bottomnavigation.R;
 import com.getbase.floatingactionbutton.FloatingActionButton;

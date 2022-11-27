@@ -61,7 +61,7 @@ public class test extends Fragment {
         reminder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), TestActivity.class);
+                Intent intent = new Intent(getActivity(), AlarmActivity.class);
                 startActivity(intent);
             }
         });

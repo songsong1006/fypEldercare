@@ -258,12 +258,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 /*getSupportActionBar().setTitle("profile");
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
                 //break;
-            case R.id.nev_checkin:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new CheckFragment()).commit();
+            //case R.id.nev_checkin:
+               // getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+               //         new CheckFragment()).commit();
                 /*getSupportActionBar().setTitle("profile");
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
-                break;
+               // break;
             case R.id.nev_home:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new HomeFragment()).commit();

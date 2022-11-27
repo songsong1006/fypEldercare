@@ -19,8 +19,8 @@ import android.widget.ListView;
 
 import com.example.bottomnavigation.Activity.AddReminderActivity;
 import com.example.bottomnavigation.Model.AlarmCursorAdapter;
-import com.example.bottomnavigation.data.AlarmReminderContract;
-import com.example.bottomnavigation.data.AlarmReminderDbHelper;
+import com.example.bottomnavigation.Data.AlarmReminderContract;
+import com.example.bottomnavigation.Data.AlarmReminderDbHelper;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 
 public class TestActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {

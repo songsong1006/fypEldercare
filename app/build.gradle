@@ -8,6 +8,7 @@ android {
     compileSdk 32
 
     defaultConfig {
+        manifestPlaceholders = [bootPriority:"999"]
         applicationId "com.example.bottomnavigation"
         minSdk 21
         targetSdk 32
@@ -15,6 +16,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
     }
 
     buildTypes {
@@ -34,6 +36,8 @@ android {
 
 
 dependencies {
+
+    
 
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
@@ -57,6 +61,9 @@ dependencies {
 
     implementation "androidx.navigation:navigation-fragment:2.3.0-alpha01"
     implementation "androidx.navigation:navigation-ui:2.3.0-alpha01"
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
+
+
 
     implementation 'com.nabinbhandari.android:permissions:3.8'
 

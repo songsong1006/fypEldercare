@@ -27,7 +27,7 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         //Define Cards
-        checkCard = (CardView) root.findViewById(R.id.check_card);
+        //checkCard = (CardView) root.findViewById(R.id.check_card);
         locationCard = (CardView) root.findViewById(R.id.location_card);
         medicineCard = (CardView) root.findViewById(R.id.medicine_card);
         emergencyCard = (CardView) root.findViewById(R.id.emergency_card);
@@ -66,19 +66,22 @@ public class HomeFragment extends Fragment {
         locationCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(),MainActivity.class));
-            }
-        });
-
-        checkCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment checkFrag = new CheckFragment();
+                Fragment medFrag = new LocationFragment();
                 FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
 
-                fm.replace(R.id.fragment_container,checkFrag).commit();
+                fm.replace(R.id.fragment_container,medFrag).commit();
             }
         });
+
+        //checkCard.setOnClickListener(new View.OnClickListener() {
+       //     @Override
+       //     public void onClick(View v) {
+        //        Fragment checkFrag = new CheckFragment();
+        //        FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+
+         //       fm.replace(R.id.fragment_container,checkFrag).commit();
+        //    }
+       // });
 
 
 

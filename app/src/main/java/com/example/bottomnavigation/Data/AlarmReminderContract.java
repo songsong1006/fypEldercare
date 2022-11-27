@@ -1,4 +1,4 @@
-package com.example.bottomnavigation.data;
+package com.example.bottomnavigation.Data;
 
 import android.annotation.SuppressLint;
 import android.content.ContentResolver;

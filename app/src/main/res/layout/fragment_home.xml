@@ -61,7 +61,7 @@
         android:layout_height="wrap_content">
 
 
-        <androidx.cardview.widget.CardView
+       <!-- <androidx.cardview.widget.CardView
             android:id="@+id/check_card"
             android:foreground="?android:selectableItemBackground"
             android:clickable="true"
@@ -100,7 +100,7 @@
 
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>-->
 
         <androidx.cardview.widget.CardView
             android:id="@+id/location_card"

@@ -1,10 +1,8 @@
-package com.example.bottomnavigation.data;
+package com.example.bottomnavigation.Data;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import com.example.bottomnavigation.data.AlarmReminderContract;
 
 public class AlarmReminderDbHelper extends SQLiteOpenHelper {
 

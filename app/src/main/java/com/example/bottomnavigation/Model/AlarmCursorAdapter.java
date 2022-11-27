@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.amulyakhare.textdrawable.util.ColorGenerator;
-import com.example.bottomnavigation.data.AlarmReminderContract;
+import com.example.bottomnavigation.Data.AlarmReminderContract;
 import com.example.bottomnavigation.R;
 
 public class AlarmCursorAdapter extends CursorAdapter {

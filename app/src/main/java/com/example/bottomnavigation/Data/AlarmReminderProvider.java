@@ -1,4 +1,4 @@
-package com.example.bottomnavigation.data;
+package com.example.bottomnavigation.Data;
 
 import android.content.ContentProvider;
 import android.content.ContentUris;
