@@ -38,9 +38,9 @@ public class MainActivity3 extends AppCompatActivity {
                         case R.id.nav_home2:
                             selectedFragment = new HomeFragment2();
                             break;
-                        case R.id.nav_location2:
-                            selectedFragment = new LocationFragment();
-                            break;
+                        //case R.id.nav_location2:
+                           // selectedFragment = new LocationFragment();
+                          //  break;
                         case R.id.nav_medicine2:
                             selectedFragment = new MedicineFragment();
                             break;

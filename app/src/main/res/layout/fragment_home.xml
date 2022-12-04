@@ -135,7 +135,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Locate it"
+                    android:text="Locate Yourself"
                     android:padding="5dp"
                     android:textColor="#BCBCBC"/>
 
@@ -186,7 +186,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Remind it"
+                    android:text="Remind Medicine"
                     android:padding="5dp"
                     android:textColor="#BCBCBC"/>
 
@@ -227,7 +227,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Call it"
+                    android:text="Call Emergency"
                     android:padding="5dp"
                     android:textColor="#BCBCBC"/>
 

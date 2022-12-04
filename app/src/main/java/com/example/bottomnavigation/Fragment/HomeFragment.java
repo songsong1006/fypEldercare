@@ -10,9 +10,11 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.bottomnavigation.Activity.MainActivity;
+import com.example.bottomnavigation.NewLocation;
 import com.example.bottomnavigation.R;
 import com.example.bottomnavigation.test;
 
@@ -66,10 +68,8 @@ public class HomeFragment extends Fragment {
         locationCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment medFrag = new LocationFragment();
-                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
-
-                fm.replace(R.id.fragment_container,medFrag).commit();
+                Intent intent = new Intent(getActivity(), NewLocation.class);
+                startActivity(intent);
             }
         });
 

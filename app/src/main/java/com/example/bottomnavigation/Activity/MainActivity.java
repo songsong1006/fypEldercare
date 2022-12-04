@@ -248,10 +248,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()){
-            case R.id.nev_location:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new LocationFragment()).commit();
-                break;
+            //case R.id.nev_location:
+            //  getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+              //       new LocationFragment()).commit();
+             // break;
             //case R.id.nev_profile:
               //  getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                 //        new MedicineFragment()).commit();

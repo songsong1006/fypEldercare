@@ -81,7 +81,7 @@ public class circle_members_map extends FragmentActivity implements OnMapReadyCa
             });
 
         }else {
-            Toast.makeText(circle_members_map.this, "check permission", Toast.LENGTH_SHORT).show();
+            Toast.makeText(circle_members_map.this, "Check permission", Toast.LENGTH_SHORT).show();
         }
     }
 }
