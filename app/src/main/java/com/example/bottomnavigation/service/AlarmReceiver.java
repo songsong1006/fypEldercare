@@ -63,7 +63,7 @@ public final class AlarmReceiver extends BroadcastReceiver {
         builder.setTicker(alarm.getLabel());
         builder.setVibrate(new long[] {1000,500,1000,500,1000,500});
         builder.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
-        builder.setContentIntent(launchAlarmLandingPage(context, alarm));
+       // builder.setContentIntent(launchAlarmLandingPage(context, alarm));
         builder.setAutoCancel(true);
         builder.setPriority(Notification.PRIORITY_HIGH);
 

@@ -27,6 +27,7 @@
         <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/drawable/ic_baseline_check_circle_243.xml" value="0.3155" />
         <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/drawable/ic_baseline_done_24.xml" value="0.276" />
         <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.2505" />
+        <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/drawable/ic_baseline_help_24.xml" value="0.197" />
         <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2505" />
         <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/drawable/ic_baseline_info_24.xml" value="0.2505" />
         <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/drawable/ic_baseline_insert_invitation_24.xml" value="0.2505" />
@@ -100,6 +101,7 @@
         <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/layout/fragment_home2.xml" value="0.36666666666666664" />
         <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/layout/fragment_location.xml" value="0.264" />
         <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/layout/fragment_location2.xml" value="0.36666666666666664" />
+        <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/layout/fragment_manual.xml" value="0.25416666666666665" />
         <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/layout/fragment_medicine.xml" value="0.358695652173913" />
         <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/layout/fragment_settings.xml" value="0.33" />
         <entry key="..\:/University/Forth Year/Fragment/app/src/main/res/layout/fragment_test.xml" value="0.36666666666666664" />

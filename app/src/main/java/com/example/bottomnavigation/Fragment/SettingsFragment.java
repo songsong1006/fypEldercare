@@ -20,7 +20,8 @@ import com.example.bottomnavigation.R;
 
 public class SettingsFragment extends Fragment {
 
-    RelativeLayout profileLayout, joincircleLayout, inviteLayout, helpLayout, aboutLayout;
+    RelativeLayout profileLayout, joincircleLayout, inviteLayout, helpLayout, aboutLayout
+            ,manualLayout;
 
     @Nullable
     @Override
@@ -32,6 +33,7 @@ public class SettingsFragment extends Fragment {
         inviteLayout = root.findViewById(R.id.invite_layout);
         helpLayout = root.findViewById(R.id.help_layout);
         aboutLayout = root.findViewById(R.id.about_layout);
+        manualLayout = root.findViewById(R.id.manual_layout);
 
         profileLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +79,17 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Fragment callFrag = new AboutFragment();
+                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+
+                fm.replace(R.id.fragment_container,callFrag).commit();
+
+            }
+        });
+
+        manualLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment callFrag = new ManualFragment();
                 FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
 
                 fm.replace(R.id.fragment_container,callFrag).commit();

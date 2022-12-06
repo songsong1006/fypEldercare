@@ -13,7 +13,7 @@
         android:textSize="35sp"
         android:gravity="center"
         android:textColor="@color/black"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="20dp"/>
 
     <RelativeLayout
@@ -35,7 +35,7 @@
             android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/profile_logo"
             android:fontFamily="sans-serif-medium"
             android:padding="10dp"
@@ -78,7 +78,7 @@
             android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/join_logo"
             android:fontFamily="sans-serif-medium"
             android:padding="10dp"
@@ -121,7 +121,7 @@
             android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/invite_logo"
             android:fontFamily="sans-serif-medium"
             android:padding="10dp"
@@ -165,7 +165,7 @@
             android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/help_logo"
             android:fontFamily="sans-serif-medium"
             android:padding="10dp"
@@ -207,7 +207,7 @@
             android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/about_logo"
             android:fontFamily="sans-serif-medium"
             android:padding="10dp"
@@ -220,6 +220,49 @@
             android:layout_height="50dp"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/about"
+            android:src="@drawable/rightarrow_icon" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@color/line"/>
+
+    <RelativeLayout
+        android:id="@+id/manual_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/manual_logo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_baseline_help_24" />
+
+        <TextView
+            android:id="@+id/manual"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/manual_logo"
+            android:fontFamily="sans-serif-medium"
+            android:padding="10dp"
+            android:text="User Manual"
+            android:textColor="@color/black"
+            android:textSize="25dp" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/manual"
             android:src="@drawable/rightarrow_icon" />
 
     </RelativeLayout>

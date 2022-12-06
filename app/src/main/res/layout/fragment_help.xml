@@ -16,25 +16,25 @@
         android:layout_height="wrap_content"
         android:text="Contact Us"
         android:fontFamily="serif"
-        android:textStyle="bold"
         android:textSize="30dp"
+        android:textStyle="bold"
         android:gravity="center"
         android:textColor="@color/black"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginTop="30dp"/>
 
     <ImageView
         android:id="@+id/helpCall"
         android:layout_marginTop="40dp"
         android:layout_gravity="center"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:src="@drawable/call_help"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Contact Center"
+        android:textSize="20dp"
         android:gravity="center"
         android:textColor="@color/black"
         android:layout_marginTop="10dp"/>
@@ -43,6 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="+6012345678"
+        android:textSize="20dp"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:gravity="center"
@@ -59,14 +60,15 @@
         android:id="@+id/helpMail"
         android:layout_marginTop="40dp"
         android:layout_gravity="center"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:src="@drawable/mail"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Email"
+        android:textSize="20dp"
         android:gravity="center"
         android:textColor="@color/black"
         android:layout_marginTop="10dp"/>
@@ -75,6 +77,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="eldercare710@gmail.com"
+        android:textSize="20dp"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:gravity="center"

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.ManualFragment"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/backBtn6"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_baseline_arrow_back_24"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="User Manual"
+        android:textStyle="bold"
+        android:fontFamily="serif"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_marginTop="30dp"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarStyle="outsideOverlay"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="What is Location?"
+        android:textStyle="bold"
+        android:fontFamily="serif"
+        android:textSize="20dp"
+        android:gravity="left"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You can see your current location in the Location!"
+        android:fontFamily="serif"
+        android:textSize="20dp"
+        android:gravity="left"
+        android:textColor="@color/black"
+        android:layout_marginBottom="20dp"/>
+
+    <View
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@color/line"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="What is Invite Code?"
+        android:textStyle="bold"
+        android:fontFamily="serif"
+        android:textSize="20dp"
+        android:gravity="left"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You can share your invite code to your family members / cargivers
+to let them join your circle!"
+        android:fontFamily="serif"
+        android:textSize="20dp"
+        android:gravity="left"
+        android:textColor="@color/black"
+        android:layout_marginBottom="20dp"/>
+
+    <View
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@color/line"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="How to join the circle?"
+        android:textStyle="bold"
+        android:fontFamily="serif"
+        android:textSize="20dp"
+        android:gravity="left"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You just have to fill in the invite code in join circle,
+then you will successfully joined in!"
+        android:fontFamily="serif"
+        android:textSize="20dp"
+        android:gravity="left"
+        android:textColor="@color/black"
+        android:layout_marginBottom="20dp"/>
+
+    <View
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@color/line"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="How to know who is in my circle?"
+        android:textStyle="bold"
+        android:fontFamily="serif"
+        android:textSize="20dp"
+        android:gravity="left"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="The username list will be listed in my circle!"
+        android:fontFamily="serif"
+        android:textSize="20dp"
+        android:gravity="left"
+        android:textColor="@color/black"
+        android:layout_marginBottom="20dp"/>
+
+    <View
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@color/line"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What is Medicine?"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:textSize="20dp"
+                android:gravity="left"
+                android:textColor="@color/black"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You can record your medicine here with the medicine information and set
+an alarm for them!"
+                android:fontFamily="serif"
+                android:textSize="20dp"
+                android:gravity="left"
+                android:textColor="@color/black"
+                android:layout_marginBottom="20dp"/>
+
+            <View
+                android:layout_width="350dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@color/line"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What is Emergency?"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:textSize="20dp"
+                android:gravity="left"
+                android:textColor="@color/black"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You can call an emergency number '911' by clicking the big red button!"
+                android:fontFamily="serif"
+                android:textSize="20dp"
+                android:gravity="left"
+                android:textColor="@color/black"
+                android:layout_marginBottom="20dp"/>
+
+
+
+        </LinearLayout>
+
+
+
+</ScrollView>
+
+
+
+</LinearLayout>
