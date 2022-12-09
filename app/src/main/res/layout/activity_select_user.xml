@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Activity.SelectUser"
     android:orientation="vertical"
-    android:background="@drawable/selectbg">
+    android:background="@drawable/main_new">
 
     <TextView
         android:layout_width="wrap_content"

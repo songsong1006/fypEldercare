@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/home"
+    android:background="@drawable/main_new"
     android:orientation="vertical"
     android:padding="10dp">
 
@@ -28,7 +28,7 @@
         <ImageView
             android:id="@+id/settingsBtn"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/blank"
             android:src="@drawable/ic_baseline_settings_24" />
@@ -124,6 +124,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
+                    android:textColor="@color/black"
                     android:layout_marginTop="10dp"
                     android:text="Location"/>
                 <View
@@ -175,6 +176,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
+                    android:textColor="@color/black"
                     android:layout_marginTop="10dp"
                     android:text="Medicine"/>
                 <View
@@ -216,6 +218,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
+                    android:textColor="@color/black"
                     android:layout_marginTop="10dp"
                     android:text="Emergency"/>
                 <View

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UpdateActivity"
-    android:background="@drawable/medication">
+    android:background="@drawable/medicine_new">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar7"
@@ -147,6 +147,6 @@
         android:layout_margin="20dp"
         android:clickable="true"
         android:src="@drawable/ic_baseline_done_24"
-        android:backgroundTint="#FF8400"/>
+        android:backgroundTint="@color/colorPrimary"/>
 
 </RelativeLayout>

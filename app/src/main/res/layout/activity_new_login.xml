@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/skyblue"
+    android:background="@color/colorPrimary"
     tools:context=".Activity.NewLogin">
 
     <TextView
@@ -119,7 +119,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/txt"
                 android:text="@string/sign_up"
-                android:textColor="@color/skyblue"
+                android:textColor="@color/colorPrimary"
                 android:textSize="16sp" />
 
         </RelativeLayout>

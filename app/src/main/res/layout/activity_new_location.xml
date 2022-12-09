@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".NewLocation"
     android:orientation="vertical"
-    android:background="@drawable/location">
+    android:background="@drawable/location_new">
 
     <TextView
         android:layout_width="match_parent"

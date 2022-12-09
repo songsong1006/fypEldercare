@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.NewRegister"
-    android:background="#2979FF">
+    android:background="@color/colorPrimary">
 
     <TextView
         android:id="@+id/faded_signup_text"
@@ -137,7 +137,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/txt"
                 android:text="Log In"
-                android:textColor="#2979FF"
+                android:textColor="@color/colorPrimary"
                 android:textSize="16sp" />
         </RelativeLayout>
     </RelativeLayout>
