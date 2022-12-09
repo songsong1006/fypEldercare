@@ -49,6 +49,7 @@ public class UpdateActivity extends AppCompatActivity {
                 times = times_input.getText().toString().trim();
                 food = food_input.getText().toString().trim();
                 myDatabaseHelper.updateData(id, name, tablets, times, food);
+                finish();
 
             }
         });

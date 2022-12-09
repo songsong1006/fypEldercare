@@ -21,9 +21,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.bottomnavigation.Fragment.AboutFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -31,6 +33,8 @@ import java.util.ArrayList;
 
 public class test extends Fragment {
     Button reminder;
+
+    ImageView refresh;
 
     FloatingActionButton addRecordBtn;
 
@@ -56,6 +60,18 @@ public class test extends Fragment {
         recyclerView = root.findViewById(R.id.medicine_recycle);
         empty_imageview = root.findViewById(R.id.imageView2);
         no_data = root.findViewById(R.id.textView5);
+        refresh = root.findViewById(R.id.reminder2);
+
+        refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment callFrag = new test();
+                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+
+                fm.replace(R.id.fragment_container,callFrag).commit();
+                Toast.makeText(getContext(), "Refreshed", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
         reminder.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +101,7 @@ public class test extends Fragment {
 
         storeDataInArrays();
 
-        customAdapter = new CustomAdapter(getActivity(),getActivity(), medicine_id, medicine_name,
+        customAdapter = new CustomAdapter(getActivity(),getContext(), medicine_id, medicine_name,
                         medicine_tablets, medicine_times, medicine_food);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -98,7 +114,7 @@ public class test extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1){
-            getFragmentManager()
+            getParentFragmentManager()
                     .beginTransaction()
                     .detach(this)
                     .attach(this)

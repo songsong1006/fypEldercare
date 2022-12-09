@@ -7,32 +7,48 @@
     tools:context=".UpdateActivity"
     android:background="@drawable/medication">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:title="Update / Delete Your Medicine Here"
+        app:titleTextColor="@color/white" />
+
     <TextView
+        android:id="@+id/update3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Update Medicine"
         android:textSize="30dp"
         android:gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:textColor="@color/black"
-        android:fontFamily="serif"/>
+        android:fontFamily="serif"
+        android:layout_below="@id/toolbar7"/>
 
     <LinearLayout
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/update3"
+        android:layout_marginTop="40dp"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:fontFamily="sans-serif-medium"
-            android:textSize="20sp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
             android:text="Medicine Name"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/txtmedName4"
@@ -47,13 +63,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="20sp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="5dp"
             android:fontFamily="sans-serif-medium"
+            android:gravity="center"
             android:text="Tablets"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/txtTablets4"
@@ -68,13 +84,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="20sp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="5dp"
             android:fontFamily="sans-serif-medium"
+            android:gravity="center"
             android:text="Times Daily"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/txtTimesDaily4"
@@ -84,19 +100,19 @@
             android:layout_marginRight="10dp"
             android:background="@drawable/rounded"
             android:gravity="center"
-            android:inputType="number"
-            android:hint="3" />
+            android:hint="3"
+            android:inputType="number" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="20sp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="5dp"
             android:fontFamily="sans-serif-medium"
+            android:gravity="center"
             android:text="Before / After Meal?"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/txtFood4"
@@ -112,11 +128,12 @@
             android:id="@+id/delete_button"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="Delete"
             android:layout_marginTop="10dp"
+            android:backgroundTint="@color/red"
+            android:text="Delete"
             android:textAllCaps="true"
             android:textColor="@color/white"
-            android:backgroundTint="@color/red"/>
+            android:layout_gravity="center"/>
 
     </LinearLayout>
 

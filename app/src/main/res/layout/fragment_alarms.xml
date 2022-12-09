@@ -6,6 +6,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment.AlarmsFragment">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar6"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Add Your Alarm Here"
+        app:titleTextColor="@color/white"
+        android:fontFamily="sans-serif-condensed"/>
+
 
     <com.example.bottomnavigation.view.EmptyRecyclerView
         android:layout_width="match_parent"

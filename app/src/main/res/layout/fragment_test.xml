@@ -6,11 +6,21 @@
     android:layout_height="match_parent"
     android:background="@drawable/medication">
 
+
+
     <Button
         android:id="@+id/reminder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Set Alarm" />
+        android:text="Set Alarm"/>
+
+
+    <ImageView
+        android:id="@+id/reminder2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_baseline_refresh_24"
+        android:layout_below="@id/reminder"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_record"
