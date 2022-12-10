@@ -16,6 +16,16 @@
         android:layout_marginTop="40dp"
         android:layout_marginBottom="20dp"/>
 
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarStyle="outsideOverlay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
     <RelativeLayout
         android:id="@+id/profile_layout"
         android:layout_width="match_parent"
@@ -266,5 +276,7 @@
             android:src="@drawable/rightarrow_icon" />
 
     </RelativeLayout>
+        </LinearLayout>
+        </ScrollView>
 
 </LinearLayout>
