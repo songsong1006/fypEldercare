@@ -11,8 +11,8 @@
         android:id="@+id/reminder"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:text="Set Alarm"
-        android:backgroundTint="@color/button"/>
+        android:backgroundTint="@color/button"
+        android:text="Set Alarm" />
 
     <Button
         android:id="@+id/reminder2"
