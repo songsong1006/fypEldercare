@@ -16,5 +16,6 @@
     <color name="line">#C3C3C3</color>
     <color name="red">#FF0000</color>
     <color name="accent">#FF4081</color>
+    <color name="button">#FF8F37</color>
 
 </resources>

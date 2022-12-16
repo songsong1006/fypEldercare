@@ -24,13 +24,13 @@
         android:id="@+id/update3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Update Medicine"
-        android:textSize="30dp"
-        android:gravity="center"
+        android:layout_below="@id/toolbar7"
         android:layout_marginTop="20dp"
-        android:textColor="@color/black"
         android:fontFamily="serif"
-        android:layout_below="@id/toolbar7"/>
+        android:gravity="center"
+        android:text="Update Medicine"
+        android:textColor="@color/black"
+        android:textSize="30dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -141,12 +141,15 @@
         android:id="@+id/saveBtn4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/button"
         android:clickable="true"
-        android:src="@drawable/ic_baseline_done_24"
-        android:backgroundTint="@color/colorPrimary"/>
+        android:src="@drawable/ic_baseline_done_24" />
 
 </RelativeLayout>

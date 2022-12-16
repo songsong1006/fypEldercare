@@ -18,6 +18,7 @@ public class UpdateActivity extends AppCompatActivity {
     EditText name_input, tablets_input, times_input, food_input;
     FloatingActionButton floatingActionButton;
     Button delete_button;
+    AlertDialog.Builder builder;
 
     String id, name, tablets, times, food;
 
@@ -49,7 +50,26 @@ public class UpdateActivity extends AppCompatActivity {
                 times = times_input.getText().toString().trim();
                 food = food_input.getText().toString().trim();
                 myDatabaseHelper.updateData(id, name, tablets, times, food);
-                finish();
+
+                builder = new AlertDialog.Builder(UpdateActivity.this);
+                builder.setMessage("Remember to refresh the medicine list by clicking the refresh button!").setTitle("Cautious");
+                builder.setMessage("Remember to refresh the medicine list by clicking the refresh button!")
+                        .setCancelable(false)
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+                        })
+                        .setNegativeButton("Continue To Update", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alert = builder.create();
+                alert.setTitle("Cautious");
+                alert.show();
 
             }
         });

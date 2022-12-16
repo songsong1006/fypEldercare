@@ -38,7 +38,7 @@ public class AddEditAlarmActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_edit_alarm);
 
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         getSupportActionBar().setTitle(getToolbarTitle());
 
         final Alarm alarm = getAlarm();

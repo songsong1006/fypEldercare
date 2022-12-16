@@ -122,17 +122,17 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp" />
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/forgotp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="50dp"
                 android:layout_below="@+id/txt"
-                android:textAlignment="center"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
                 android:text="Forgot Password"
+                android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
-                android:textSize="16sp" />
+                android:textSize="16sp" /> -->
 
         </RelativeLayout>
 

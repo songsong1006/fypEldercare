@@ -12,27 +12,24 @@
         android:layout_height="50dp"
         android:orientation="horizontal"
         android:layout_marginTop="30dp"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:textAlignment="center">
 
         <TextView
             android:id="@+id/blank"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:fontFamily="serif"
+            android:gravity="center"
             android:text="Welcome To ElderCare !"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="25dp"
             android:textStyle="bold|italic" />
 
-        <ImageView
-            android:id="@+id/settingsBtn"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/blank"
-            android:src="@drawable/ic_baseline_settings_24" />
     </RelativeLayout>
+
+
 
     <LinearLayout
         android:clipToPadding="false"
@@ -40,67 +37,10 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="5dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Home"
-            android:fontFamily="serif"
-            android:textStyle="bold"
-            android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:textSize="30dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:clipToPadding="false"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_marginTop="60dp">
 
 
-       <!-- <androidx.cardview.widget.CardView
-            android:id="@+id/check_card"
-            android:foreground="?android:selectableItemBackground"
-            android:clickable="true"
-            android:layout_width="160dp"
-            android:layout_height="190dp"
-            android:layout_margin="10dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:background="@drawable/circlebackroundgreen"
-                    android:src="@drawable/ic_baseline_check_circle_242"
-                    android:padding="10dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp"
-                    android:text="Check-In"/>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#BCBCBC"
-                    android:layout_margin="10dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Click it"
-                    android:padding="5dp"
-                    android:textColor="#BCBCBC"/>
 
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>-->
 
         <androidx.cardview.widget.CardView
             android:id="@+id/location_card"
@@ -144,16 +84,6 @@
 
         </androidx.cardview.widget.CardView>
 
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:clipToPadding="false"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
         <androidx.cardview.widget.CardView
             android:id="@+id/medicine_card"
             android:foreground="?android:selectableItemBackground"
@@ -196,6 +126,17 @@
 
         </androidx.cardview.widget.CardView>
 
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
         <androidx.cardview.widget.CardView
             android:id="@+id/emergency_card"
             android:foreground="?android:selectableItemBackground"
@@ -230,13 +171,57 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Call Emergency"
+                    android:text="Emergency Call"
                     android:padding="5dp"
                     android:textColor="#BCBCBC"/>
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/settingsBtn"
+            android:foreground="?android:selectableItemBackground"
+            android:clickable="true"
+            android:layout_width="160dp"
+            android:layout_height="190dp"
+            android:layout_margin="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/circlebackroundgreen"
+                    android:src="@drawable/ic_baseline_settings_24"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp"
+                    android:text="Settings"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#BCBCBC"
+                    android:layout_margin="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Setting Application"
+                    android:padding="5dp"
+                    android:textColor="#BCBCBC"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
 
 
     </LinearLayout>

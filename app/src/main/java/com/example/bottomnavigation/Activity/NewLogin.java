@@ -41,7 +41,7 @@ public class NewLogin extends AppCompatActivity {
         logpass = findViewById(R.id.edittext_password);
         loginbtn = findViewById(R.id.login_button);
         txtsign = findViewById(R.id.logtosign);
-        txtforgot = findViewById(R.id.forgotp);
+        //txtforgot = findViewById(R.id.forgotp);
         slide_logtxt = findViewById(R.id.slide_login_text);
 
         //set animation
@@ -70,19 +70,19 @@ public class NewLogin extends AppCompatActivity {
             }
         });
 
-        txtforgot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txtforgotlistener();
-            }
-        });
+        //txtforgot.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View v) {
+       //         txtforgotlistener();
+        //    }
+       // });
 
     }
 
-    private void txtforgotlistener(){
-        Intent intent = new Intent(NewLogin.this, ForgotPassword.class);
-        startActivity(intent);
-    }
+    //private void txtforgotlistener(){
+       // Intent intent = new Intent(NewLogin.this, ForgotPassword.class);
+       // startActivity(intent);
+   // }
 
     private void txtsignuplistener() {
         Intent intent = new Intent(NewLogin.this, NewRegister.class);

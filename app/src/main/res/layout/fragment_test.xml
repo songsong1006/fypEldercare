@@ -7,20 +7,30 @@
     android:background="@drawable/medicine_new">
 
 
-
     <Button
         android:id="@+id/reminder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Set Alarm"/>
 
+    <Button
+        android:id="@+id/reminder2"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reminder"
+        android:backgroundTint="@color/button"
+        android:text="Refresh"
+        android:textColor="@color/black"
+        android:layout_alignParentRight="true"/>
 
-    <ImageView
+
+
+    <!--<ImageView
         android:id="@+id/reminder2"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/ic_baseline_refresh_24"
-        android:layout_below="@id/reminder"/>
+        android:layout_below="@id/reminder"/>-->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_record"
@@ -32,13 +42,13 @@
         android:layout_margin="20dp"
         android:clickable="true"
         android:src="@drawable/ic_baseline_add_24"
-        android:backgroundTint="@color/colorPrimary"/>
+        android:backgroundTint="@color/button"/>
 
     <TextView
         android:id="@+id/my_medicine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/reminder"
+        android:layout_below="@+id/reminder2"
         android:fontFamily="serif"
         android:gravity="center"
         android:text="My Medicine List"
@@ -51,8 +61,8 @@
         android:id="@+id/medicine_recycle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="10dp"
-        android:layout_below="@+id/my_medicine"/>
+        android:layout_below="@+id/my_medicine"
+        android:paddingTop="10dp" />
 
     <ImageView
         android:id="@+id/imageView2"

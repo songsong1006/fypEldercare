@@ -32,9 +32,8 @@ import java.util.ArrayList;
 
 
 public class test extends Fragment {
-    Button reminder;
+    Button reminder,refresh;
 
-    ImageView refresh;
 
     FloatingActionButton addRecordBtn;
 

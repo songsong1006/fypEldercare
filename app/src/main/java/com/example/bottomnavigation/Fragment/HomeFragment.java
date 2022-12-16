@@ -21,7 +21,6 @@ import com.example.bottomnavigation.test;
 public class HomeFragment extends Fragment {
 
     CardView checkCard, locationCard, medicineCard, emergencyCard;
-    ImageView settings;
 
     @Nullable
     @Override
@@ -29,13 +28,12 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         //Define Cards
-        //checkCard = (CardView) root.findViewById(R.id.check_card);
+        checkCard = (CardView) root.findViewById(R.id.settingsBtn);
         locationCard = (CardView) root.findViewById(R.id.location_card);
         medicineCard = (CardView) root.findViewById(R.id.medicine_card);
         emergencyCard = (CardView) root.findViewById(R.id.emergency_card);
-        settings = root.findViewById(R.id.settingsBtn);
 
-        settings.setOnClickListener(new View.OnClickListener() {
+        checkCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Fragment callFrag = new SettingsFragment();
