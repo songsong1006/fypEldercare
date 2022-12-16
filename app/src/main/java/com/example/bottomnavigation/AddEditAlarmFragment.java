@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -33,6 +34,7 @@ public final class AddEditAlarmFragment extends Fragment {
     private TimePicker mTimePicker;
     private EditText mLabel;
     private CheckBox mMon, mTues, mWed, mThurs, mFri, mSat, mSun;
+    private ImageView backBtn;
 
     public static AddEditAlarmFragment newInstance(Alarm alarm) {
 
@@ -67,8 +69,16 @@ public final class AddEditAlarmFragment extends Fragment {
         mFri = (CheckBox) v.findViewById(R.id.edit_alarm_fri);
         mSat = (CheckBox) v.findViewById(R.id.edit_alarm_sat);
         mSun = (CheckBox) v.findViewById(R.id.edit_alarm_sun);
+        backBtn = (ImageView) v.findViewById(R.id.backBtn8);
 
         setDayCheckboxes(alarm);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                delete2();
+            }
+        });
 
         return v;
     }
@@ -161,6 +171,39 @@ public final class AddEditAlarmFragment extends Fragment {
                 } else {
                     messageId = R.string.delete_failed;
                     Toast.makeText(getContext(), messageId, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        builder.setNegativeButton(R.string.no, null);
+        builder.show();
+
+    }
+
+    private void delete2() {
+
+        final Alarm alarm = getAlarm();
+
+        final AlertDialog.Builder builder =
+                new AlertDialog.Builder(getContext(), R.style.DeleteAlarmDialogTheme);
+        builder.setTitle("Back To The List");
+        builder.setMessage("Are you sure you would like to back to the list?");
+        builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                //Cancel any pending notifications for this alarm
+                AlarmReceiver.cancelReminderAlarm(getContext(), alarm);
+
+                final int rowsDeleted = DatabaseHelper.getInstance(getContext()).deleteAlarm(alarm);
+                int messageId;
+                if(rowsDeleted == 1) {
+                    //messageId = R.string.delete_complete;
+                    //Toast.makeText(getContext(), messageId, Toast.LENGTH_SHORT).show();
+                    LoadAlarmsService.launchLoadAlarmsService(getContext());
+                    getActivity().finish();
+                } else {
+                    //messageId = R.string.delete_failed;
+                    //Toast.makeText(getContext(), messageId, Toast.LENGTH_SHORT).show();
                 }
             }
         });
