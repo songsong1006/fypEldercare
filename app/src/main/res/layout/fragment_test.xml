@@ -18,10 +18,10 @@
         android:id="@+id/reminder2"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
         android:backgroundTint="@color/button"
         android:text="Refresh"
-        android:textColor="@color/white"
-        android:layout_alignParentRight="true"/>
+        android:textColor="@color/white" />
 
 
 

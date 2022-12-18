@@ -1,17 +1,22 @@
 package com.example.bottomnavigation.Fragment;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.bottomnavigation.AddRecord2Activity;
 import com.example.bottomnavigation.Model.membersadepter;
 import com.example.bottomnavigation.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,10 +36,13 @@ public class mycirclefragment extends Fragment {
     RecyclerView.LayoutManager layoutManager;
     //users cuser;
     ArrayList<String> namelist, idlist;
+    AlertDialog.Builder builder;
 
     DatabaseReference databaseReference, currentreference;
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
+
+    Button circleDelete;
 
 
     @Nullable
@@ -43,6 +51,7 @@ public class mycirclefragment extends Fragment {
         View view = inflater.inflate(R.layout.my_circle_fragment, container, false);
 
         recyclerView = view.findViewById(R.id.view_recyclerview);
+        circleDelete = view.findViewById(R.id.circle_delete);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
@@ -99,6 +108,38 @@ public class mycirclefragment extends Fragment {
         adapter = new membersadepter(namelist, idlist, getActivity());
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+
+
+        circleDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                builder = new AlertDialog.Builder(getContext());
+                builder.setMessage("Are you sure want to delete all?").setTitle("Cautious");
+                builder.setMessage("Are you sure want to delete all?")
+                        .setCancelable(false)
+                        .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                currentreference.removeValue();
+                                Toast.makeText(getContext(), "Cleared All.", Toast.LENGTH_SHORT).show();
+                                Fragment callFrag = new mycirclefragment();
+                                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+
+                                fm.replace(R.id.fragment_container,callFrag).commit();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alert = builder.create();
+                alert.setTitle("Cautious");
+                alert.show();
+
+            }
+        });
 
         return view;
     }

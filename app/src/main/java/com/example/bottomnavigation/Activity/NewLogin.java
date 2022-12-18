@@ -103,12 +103,12 @@ public class NewLogin extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 loader.dismissloader();
-                                Toast.makeText(NewLogin.this, "Success..", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(NewLogin.this, "Success.", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(NewLogin.this, showcirclecode.class);
                                 startActivity(intent);
                             } else {
                                 loader.dismissloader();
-                                Toast.makeText(NewLogin.this, "Failed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(NewLogin.this, "Wrong Credentials.", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });

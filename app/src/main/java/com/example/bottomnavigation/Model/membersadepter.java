@@ -46,6 +46,7 @@ public class membersadepter extends RecyclerView.Adapter<membersadepter.membersa
         holder.nametxt.setText(strobj);
 
         final String strobj1 = idlist.get(position);
+        //holder.idtxt.setText(strobj1);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +68,7 @@ public class membersadepter extends RecyclerView.Adapter<membersadepter.membersa
     }
 
     public class membersadepterViewHolder extends RecyclerView.ViewHolder {
-        TextView nametxt;
+        TextView nametxt,idtxt;
         Context c;
         ArrayList<String> namearraylist, idarraylist;
         FirebaseUser firebaseUser;
@@ -83,6 +84,7 @@ public class membersadepter extends RecyclerView.Adapter<membersadepter.membersa
             firebaseUser = firebaseAuth.getCurrentUser();
 
             nametxt = itemView.findViewById(R.id.textview_name);
+            //idtxt = itemView.findViewById(R.id.textview_id);
         }
     }
 }
