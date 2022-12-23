@@ -7,6 +7,12 @@
     android:gravity="bottom"
     android:background="@color/colorPrimary">
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageView23"
+        android:layout_gravity="left"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:src="@drawable/call_help"/>
 
     <TextView
         android:id="@+id/header_name_text"

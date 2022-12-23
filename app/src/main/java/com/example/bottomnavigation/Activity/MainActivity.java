@@ -16,6 +16,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -25,11 +26,13 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.bottomnavigation.Fragment.CallFragment;
 import com.example.bottomnavigation.Fragment.CheckFragment;
 import com.example.bottomnavigation.Fragment.HomeFragment;
 import com.example.bottomnavigation.Fragment.LocationFragment;
 import com.example.bottomnavigation.Fragment.MedicineFragment;
+import com.example.bottomnavigation.Model.NewUserModel;
 import com.example.bottomnavigation.NotificationC;
 import com.example.bottomnavigation.R;
 import com.example.bottomnavigation.Fragment.mycirclefragment;
@@ -62,6 +65,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
@@ -78,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     DatabaseReference databaseReference;
     String current_uid;
     AlertDialog.Builder builder;
+    CircleImageView profileImg;
 
 
     @Override
@@ -113,12 +119,16 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         header_name = header.findViewById(R.id.header_name_text);
         header_email = header.findViewById(R.id.header_email_text);
+        profileImg = header.findViewById(R.id.imageView23);
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String current_name = dataSnapshot.child(current_uid).child("firstname").getValue(String.class);
                 String current_email = dataSnapshot.child(current_uid).child("email").getValue(String.class);
+
+                NewUserModel newUserModel = dataSnapshot.child(current_uid).getValue(NewUserModel.class);
+                Glide.with(MainActivity.this).load(newUserModel.getImage_url()).into(profileImg);
 
                 String s1 = "Hi, "+current_name;
                 header_name.setText(s1);
