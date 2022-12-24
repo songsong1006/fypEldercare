@@ -76,11 +76,11 @@ public class invitecodefragment extends Fragment {
     private void sharebuttonlistener() {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
-        String sharebody = "circle code: "+code;
+        String sharebody = "Your ElderCare Circle Code: "+code;
         String sharesub = "gps helper invitation code";
         intent.putExtra(Intent.EXTRA_SUBJECT,sharesub);
         intent.putExtra(Intent.EXTRA_TEXT,sharebody);
-        startActivity(Intent.createChooser(intent, "sharing code"));
+        startActivity(Intent.createChooser(intent, "Sharing Code"));
     }
 
     private void displaycodelistener() {
