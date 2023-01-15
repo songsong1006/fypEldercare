@@ -51,7 +51,8 @@ public class SelectUser extends AppCompatActivity {
             public void onClick(View v) {
                 builder = new AlertDialog.Builder(SelectUser.this);
                 builder.setMessage("Remember to switch off the dark mode of your phone before login.").setTitle("Alert");
-                builder.setMessage("Remember to switch off the dark mode of your phone before login.")
+                builder.setMessage("Remember to switch off the dark mode of your phone before login." +
+                                " As the saying goes, age is just a number!")
                         .setCancelable(false)
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
