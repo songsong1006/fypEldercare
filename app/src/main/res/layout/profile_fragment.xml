@@ -51,7 +51,7 @@
                     android:layout_gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/ic_baseline_person_24"/>
+                    android:src="@drawable/ic_baseline_upload_24"/>
 
             </androidx.cardview.widget.CardView>
 
