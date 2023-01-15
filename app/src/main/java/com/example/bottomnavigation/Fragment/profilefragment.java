@@ -87,7 +87,7 @@ public class profilefragment extends Fragment {
                 String lastname = dataSnapshot.child("lastname").getValue(String.class);
                 String email = dataSnapshot.child("email").getValue(String.class);
 
-                Glide.with(getContext()).load(newUserModel.getImage_url()).into(profileImg);
+                //Glide.with(getContext()).load(newUserModel.getImage_url()).into(profileImg);
 
                 txtfirst.setText(firstname);
                 txtlast.setText(lastname);
